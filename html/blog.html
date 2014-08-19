@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load markdown_deux_tags %}
+
+{% block content %}
+<div id="view">
+  <span id="side">
+<div id="postview">
+  <h1 class="title">{{ blog.title }}</h1>
+  <ul class="details">
+    <li class="icon-time"><span class="timestamp">{{ blog.timestamp }}</span></li>
+  </ul>
+  <div class="body">
+    {{ blog.body|markdown }}
+  </div>
+</div>
+  </span>
+</div>
+{% endblock %}

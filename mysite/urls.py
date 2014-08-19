@@ -13,7 +13,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', index),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/', blog),
+    url(r'^blog/$', index),
+    url(r'^blog/(\d+)$', blog),
 )
 
 urlpatterns += staticfiles_urlpatterns()

@@ -28,8 +28,10 @@ Markdown 的目标是实现「易读易写」。
 	{'title':"Markdown 语法说明2","timestamp":"2012-01-01","id":2,"sum":content[:40],},
 	]
 
-	return render_to_response('index.html',
+	return render_to_response(
+		'index.html',
 		{'guidance_list': guidance_list,
 		 'blog_list':blog_list,
 		 },
-		context_instance=RequestContext(request))
+		context_instance=RequestContext(request)
+	)
