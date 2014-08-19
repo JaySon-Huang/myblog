@@ -129,7 +129,6 @@ CREATE TABLE `auth_user` (
 
 -- LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$12000$Nkk76YKWHXlE$Xi4bvlacS+28nc5x63LWq3Q93n+KTC8o60pwezazSHI=','2014-08-19 21:04:52',1,'jayson','','','jayson.hjs@gmail.com',1,1,'2014-08-19 21:04:16');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 -- UNLOCK TABLES;
 
