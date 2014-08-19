@@ -4,6 +4,10 @@ from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 
+from django.http import Http404
+
+from models import BlogPost
+
 # Create your views here.
 def blog(request, blog_id):
 	guidance_list = (
@@ -11,20 +15,19 @@ def blog(request, blog_id):
 		{'url':'http://www.zhihu.com/people/jayson-24','title':u'知乎'},
 		{'url':'https://github.com/JaySon-Huang','title':u'GitHub'},
 	)
-	print 'get blog:',blog_id
+
 	if blog_id != None:
-		print blog_id,'is num.'
-		_blog = {"body":'''*hello world*  
-		====  
-		''',
-		"timestamp":"2012-01-01",
-		"title":"just for test"}
-		# blog['body'] = markdown(blog['body'])
+		try:
+			record = BlogPost.objects.get(id=blog_id)
+		except BlogPost.DoesNotExist:
+			raise Http404
+	else :
+		raise Http404
 
 	return render_to_response(
 		'blog.html',
 		{"guidance_list":guidance_list,
-		"blog":_blog,
+		"blog":record,
 		},
 		context_instance=RequestContext(request)
 	)
