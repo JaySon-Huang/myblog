@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="signup">
+  <fieldset>
+    <legend>注册</legend>
+  <form action="" method="post" class="signupform">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <th><label for="username">用户名:</label></th>
+        <td><input id="username" maxlength="20" name="username" type="text" required="required" /></td>
+        <td class='required'>*</td>
+        <td class='err'>{{ form.username.errors.0 }}</td>
+      </tr>
+      <tr>
+        <th><label for="passwd">密码:</label></th>
+        <td><input id="passwd" maxlength="20" name="passwd" type="password"  required="required" /></td>
+        <td class='required'>*</td>
+        <td class='err'>{{ form.passwd.errors.0 }}</td>
+      </tr>
+      <tr>
+        <th><label for="email">e-mail:</label></th>
+        <td><input id="email" name="email" type="email" /></td>
+        <td></td>
+        <td class='err'>{{ form.email.errors.0 }}</td>
+      </tr>
+    </table>
+    <input type="submit" value="注册" id="signup_submit" />
+  </form>
+  </fieldset>
+  </div>
+
+{% endblock %}

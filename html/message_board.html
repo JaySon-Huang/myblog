@@ -1,0 +1,18 @@
+<div class="visitors">
+  <h1>留言板</h1>
+  <dl>
+    <dt>
+      <form action="" method="POST" class="messageform">
+        {% csrf_token %}
+        <textarea class="new_message" placeholder="在此留下你的足迹" rows="3"  maxlength="200"></textarea>
+        <input type="submit" value="留言" ></input>
+      </form>
+      {% for msg in msg_list %}
+      <dl><dt>
+        <dd>{{ msg.visitor }}<time>{{ msg.time_deta }}</time></dd>
+        <dd>{{ msg.content }}</dd>
+      </dt></dl>
+      {% endfor %}
+    </dt>
+  </dl>
+</div>
