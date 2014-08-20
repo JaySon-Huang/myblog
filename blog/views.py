@@ -14,7 +14,9 @@ def blog(request, blog_id):
 		{'url':'/','title':u'博客'},
 		{'url':'http://www.zhihu.com/people/jayson-24','title':u'知乎'},
 		{'url':'https://github.com/JaySon-Huang','title':u'GitHub'},
+		{'url':'http://www.wooyun.org/whitehats/JaySon','title':u'乌云'},
 	)
+
 
 	if blog_id != None:
 		try:
