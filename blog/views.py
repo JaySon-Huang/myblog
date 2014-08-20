@@ -7,16 +7,11 @@ from django.shortcuts import render_to_response
 from django.http import Http404
 
 from models import BlogPost
+from mysite.profile import profile_list
 
 # Create your views here.
 def blog(request, blog_id):
-	guidance_list = (
-		{'url':'/','title':u'博客'},
-		{'url':'http://www.zhihu.com/people/jayson-24','title':u'知乎'},
-		{'url':'https://github.com/JaySon-Huang','title':u'GitHub'},
-		{'url':'http://www.wooyun.org/whitehats/JaySon','title':u'乌云'},
-	)
-
+	global profile_list
 
 	if blog_id != None:
 		try:
@@ -28,7 +23,7 @@ def blog(request, blog_id):
 
 	return render_to_response(
 		'blog.html',
-		{"guidance_list":guidance_list,
+		{"profile_list":profile_list,
 		"blog":record,
 		},
 		context_instance=RequestContext(request)

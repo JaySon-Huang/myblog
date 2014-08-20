@@ -22,11 +22,11 @@
   <header>
   	<nav id="nav">
       <ul>
-      {% for guidance in guidance_list %}
-        <li><a href="{{ guidance.url }}" title="{{guidance.title}}" >{{guidance.title}}</a></li>
+      {% for profile in profile_list %}
+        <li><a href="{{ profile.url }}" title="{{ profile.title }}" >{{profile.title}}</a></li>
       {% endfor %}
       </ul>
-      <script src="{% static "js/silder.js" %}"></script><!--获取当前页导航 高亮显示标题-->
+      <script src="{% static 'js/silder.js' %}"></script><!--获取当前页导航 高亮显示标题-->
     </nav>
   </header>
   <div class="mainbody">
@@ -39,7 +39,7 @@
       <aside>
         <div class="search">
           <form class="searchform" method="get" action="">
-          <input type="search" name="q" value="{% if q %}{{q}}{% endif %}"  placeholder="Search Blog" >
+          <input type="search" name="q" value="{% if q %}{{ q }}{% endif %}"  placeholder="Search Blog" >
         </form>
         </div>
       </aside>
