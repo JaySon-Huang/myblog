@@ -12,6 +12,7 @@ def index(request):
 		{'url':'/','title':u'博客'},
 		{'url':'http://www.zhihu.com/people/jayson-24','title':u'知乎'},
 		{'url':'https://github.com/JaySon-Huang','title':u'GitHub'},
+		{'url':'http://www.wooyun.org/whitehats/JaySon','title':u'乌云'},
 	)
 
 	blog_list = BlogPost.objects.all()
