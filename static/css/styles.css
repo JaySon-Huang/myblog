@@ -4,7 +4,6 @@
 body { margin:0; font: 20px "宋体", "Arial Narrow", HELVETICA; color: #3F3E3C; line-height: 1.5; background: #333; }
 img { border: 0; vertical-align: middle }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
-h1 { font: 24px "微软雅黑", "Microsoft YaHei", Arial, Helvetica, sans-serif }
 p { word-wrap: break-word }
 ul, ol { list-style: none; }
 a { color: #a6a6a6; text-decoration: none; transition: All 1s ease; -webkit-transition: All 1s ease; -moz-transition: All 1s ease; -ms-transition: All 1s ease; -o-transition: All 1s ease; }
@@ -20,7 +19,7 @@ header nav ul li a:hover, #nav_current { color: #fff; background: rgba(20, 20, 2
 .mainbody { width: 100%; border-top: #000 1px solid; clear: both; overflow: hidden; }
 /* ---------------------info------------------------- */
 .info { width: 240px; overflow: hidden; clear: both; margin: 0px auto; padding: 5px;}
-.info h1 {text-align: center; color: #fff;}
+.info h1 {text-align: center; color: #fff; font: 24px "微软雅黑", "Microsoft YaHei", Arial, Helvetica, sans-serif; }
 /* --------------------博客列表-------------------- */
 .main { width: 1000px; margin: 0 auto 20px; }
 #bloglist { width: 700px; float: left; }
@@ -47,7 +46,7 @@ header nav ul li a:hover, #nav_current { color: #fff; background: rgba(20, 20, 2
 /*-------------------aside侧边栏--------------------------*/
 aside { width: 280px; float: right; margin: 20px 0; }
 aside h2, footer h2 { font-size: 16px; margin-bottom: 10px; text-shadow: #000 1px 1px 1px; color: #ccc }
-aside div { box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(0,0,0,.7); border-radius: 6px; padding: 15px; background: #222; margin-bottom: 20px; overflow: hidden; }
+aside div { box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(0,0,0,.7); border-radius: 6px; padding: 15px; background: #222; margin-top: 35px; overflow: auto; }
 /* search */
 .searchform { overflow: hidden; padding: 10px; }
 .searchform input { background: rgba(0, 0, 0, 0.5) url(../images/icons.png) no-repeat 3px -318px; border: 1px solid #111; width: 235px; line-height: 30px; color: #b9b9b9; padding-left: 30px; }

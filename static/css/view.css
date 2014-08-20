@@ -1,12 +1,12 @@
 @charset "gb2312";
 /* view */
-#postview { width: 700px; margin: 20px 0 30px 0; float: left; overflow: auto; color: #333; border-radius: 6px; background:#EAEAEA; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; line-height: 18px; }
+#postview { width: 700px; margin: 20px 0 30px 0; float: left; overflow: hidden; color: #333; border-radius: 6px; background:#EAEAEA; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; line-height: 18px; }
 h2.t_nav { border-bottom: #247979 3px solid; font-size: 12px; font-weight: normal; line-height: 48px; height: 40px }
 h2.t_nav a { padding: 10px; color: #fff; }
 h2.t_nav a:first-child { background: #247979; }
 h2.t_nav a:last-child { background: #59BCBC; }
-#postview ul { margin: 0 30px 15px 30px; overflow:hidden }
+#postview ul { margin: 0 30px 15px 30px; overflow:hidden; }
 #postview ul p { line-height: 24px; margin: 10px 0; text-indent: 2em }
 #postview .details{ border-top : 1px solid;border-color: #b3b3b3; }
-.title { text-align: center; font-size: 22px; margin: 20px 0; color: #000 }
+.title { text-align: center; margin: 20px 0; color: #000 }
 #postview .body { margin: 0 30px 15px 30px; }
