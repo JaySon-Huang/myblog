@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
-* { margin: 0; padding: 0 }
-body { font: 20px "宋体", "Arial Narrow", HELVETICA; color: #3F3E3C; line-height: 1.5; background: #333; }
+* { padding: 0; }
+body { margin:0; font: 20px "宋体", "Arial Narrow", HELVETICA; color: #3F3E3C; line-height: 1.5; background: #333; }
 img { border: 0; vertical-align: middle }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 h1 { font: 24px "微软雅黑", "Microsoft YaHei", Arial, Helvetica, sans-serif }
@@ -13,6 +13,7 @@ a:hover { color: #fff; }
 /* -----------------------nav 一级导航----------------- */
 header { width: 100%; background: #222; height: 70px; border-bottom: #464647 1px solid; }
 header nav { margin: 0 auto; width: 1000px; text-align: center; padding-top: 15px }
+header nav ul {margin: 0;}
 header nav ul li { line-height: 40px; display: inline }
 header nav ul li a { color: #E7E7E7; display: block; padding: 0 20px; margin-right: 10px; float: left }
 header nav ul li a:hover, #nav_current { color: #fff; background: rgba(20, 20, 20, 0.8); box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(0,0,0,.7); border-radius: 6px; }
