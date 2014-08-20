@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load markdown_deux_tags %}
+{% load pygments_fliter %}
 
 {% block content %}
 <div id="view">
@@ -11,7 +11,7 @@
     <li class="icon-time"><span class="timestamp">{{ blog.timestamp }}</span></li>
   </ul>
   <div class="body">
-    {{ blog.body|markdown }}
+    {{ blog.body|pygmentize|safe }}
   </div>
 </div>
   </span>

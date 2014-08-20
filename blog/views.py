@@ -9,6 +9,8 @@ from django.http import Http404
 from models import BlogPost
 from mysite.profile import profile_list
 
+from markdown2 import markdown
+
 # Create your views here.
 def blog(request, blog_id):
 	global profile_list
@@ -16,6 +18,8 @@ def blog(request, blog_id):
 	if blog_id != None:
 		try:
 			record = BlogPost.objects.get(id=blog_id)
+			print markdown(record.body, 'codehilite')
+			record.body = markdown(record.body)
 		except BlogPost.DoesNotExist:
 			raise Http404
 	else :
