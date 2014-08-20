@@ -29,15 +29,16 @@ header nav ul li a:hover, #nav_current { color: #fff; background: rgba(20, 20, 2
 .tri { width: 0px; height: 0px; border-style: solid; border-width: 0px 0 20px 22px; border-color: transparent transparent transparent #111; position: absolute; left: 660px; top: 20px; }/* 三角形 */
 .cir { width: 10px; height: 10px; border-radius: 50%; position: absolute; left: 692px; top: 16px; background: #000; border: 2px solid #333; } /* 圆形定义边框色与背景一致 */
 .cir:hover { border: 2px solid #B9B9B9; }
-.arrow_box h1 { padding: 0 0 0 10px; font: 25px/50px "微软雅黑", "Microsoft YaHei", Arial, Helvetica, sans-serif }
+.arrow_box h1 { padding: 0 0 0 10px; font: 25px/50px "微软雅黑", "Microsoft YaHei", Arial, Helvetica, sans-serif; font-weight: normal; }
 .arrow_box img { width: 150px; padding: 4px; float: left; -webkit-transition: All 1s ease; -moz-transition: All 1s ease; -ms-transition: All 1s ease; -o-transition: All 1s ease; border-radius: 4px; margin: 0 20px 20px; }
 .arrow_box img:hover { opacity: 0.6; }
-.arrow_box p { line-height: 24px; padding: 0 0 20px 20px }
+.arrow_box p { line-height: 24px; padding: 0 20px; }
 .arrow_box p:hover { text-shadow: 1px 1px 1px #000; }
 #bloglist .details { background: rgba(1,1,1,0.3); border-radius: 0 0 6px 6px; padding: 0 10px }
 .details li { line-height: 26px; display: inline; font-size: 18px; margin-right: 10px; }
 .details li a { color: #3F3E3C }
 .details li a:hover { color: #933 }
+.preview {padding: 10px; }
 .icon-time, .likes, .comments { background: url(../images/icons.png) no-repeat }
 .icon-time { background-position: 0 -208px; padding: 0 0 0 18px; }
 .likes, .comments { float: right; padding: 0 0 0 14px; }
