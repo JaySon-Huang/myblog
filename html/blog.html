@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 {% load pygmentize %}
+{% load disqus_tags %}
 
 {% block title %}{{ blog.title }} -- JaySon{% endblock %}
 
 {% block content %}
+{% disqus_num_replies %}
 <div id="view">
-  <span id="side">
 <div id="postview">
   <h1 class="title">{{ blog.title }}</h1>
   <ul class="details">
     <li class="icon-time"><span class="timestamp">{{ blog.timestamp }}</span></li>
+    <li ><a href="{{ object.get_absolute_url }}#disqus_thread" data-disqus-identifier="{{ blog.id }}">查看评论</a></li>
+
   </ul>
   <div class="body">
     {{ blog.body|pygmentize|safe }}
   </div>
 </div>
-  </span>
+<div id="comments">
+  {% disqus_show_comments %}
+</div>
 </div>
 {% endblock %}
