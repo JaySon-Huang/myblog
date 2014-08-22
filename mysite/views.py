@@ -24,3 +24,17 @@ def index(request):
 		 },
 		context_instance=RequestContext(request)
 	)
+
+def google_verify(request):
+	return render_to_response(
+		'google08a282ae4299a9ec.html',
+		{},
+		context_instance=RequestContext(request)
+	)
+
+def baidu_verify(request):
+	return render_to_response(
+		'baidu_verify_khKBt7UZo7.html',
+		{},
+		context_instance=RequestContext(request)
+	)
