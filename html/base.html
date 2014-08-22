@@ -6,22 +6,22 @@
 <title>{% block title %}{% endblock %}</title>
 <meta name="keywords" content="博客,JaySon,网络安全" />
 <meta name="description" content="" />
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 <link href="{% static 'css/view.css' %}" rel="stylesheet">
 <link href="{% static 'css/animation.css' %}" rel="stylesheet">
 <link href="{% static 'css/code.css' %}" rel="stylesheet">
-<!-- 返回顶部调用 begin -->
-<link href="{% static 'css/lrtk.css' %}" rel="stylesheet" />
 <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
-<!-- 返回顶部调用 end-->
 <!--[if lt IE 9]>
 <script src="js/modernizr.js"></script>
 <![endif]-->
 </head>
 <body>
   <header>
-  	<nav id="nav">
+  	<nav id="nav" class="nav">
       <ul>
       {% for profile in profile_list %}
         <li><a href="{{ profile.url }}" title="{{ profile.title }}" >{{profile.title}}</a></li>
@@ -30,13 +30,16 @@
       <script src="{% static 'js/silder.js' %}"></script><!--获取当前页导航 高亮显示标题-->
     </nav>
   </header>
-  <div class="mainbody">
+  <div class="container">
 	<div class="info">
       <img src="{% static 'images/profile_icon.jpg' %}" alt=""><br />
       <h1>JaySon.<h1/>
     </div> <!--info end-->
-    <div class="main">
+    <div id="content" class='row-fluid'>
+      <div class='col-md-8 blog-main'>
       {% block content %}{% endblock %}
+      </div>
+      <div class='col-md-3 blog-sidebar'>
       <aside>
         <div class="search">
           <form class="searchform" method="get" action="">
@@ -44,6 +47,7 @@
         </form>
         </div>
       </aside>
+      </div>
     </div>
   </div><!--mainbody end-->
   <footer>
