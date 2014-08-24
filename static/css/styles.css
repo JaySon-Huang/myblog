@@ -2,6 +2,7 @@
 /* CSS Document */
 * { padding: 0; }
 code {background-color: inherit;}
+hr {background-color: #eecc22; height: 1px;}
 body { margin:0; font: 20px "微软雅黑", "Microsoft YaHei", HELVETICA; color: #3F3E3C; line-height: 1.5; background: #333; }
 img { border: 0; vertical-align: middle }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
