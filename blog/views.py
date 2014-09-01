@@ -15,10 +15,12 @@ from markdown import markdown
 def blog(request, blog_id):
 	global profile_list
 
-	if blog_id != None:
+	if blog_id is not None:
 		try:
 			record = BlogPost.objects.get(id=blog_id)
 			record.body = markdown(unicode(record.body))
+			for tag in record.tags.all():
+				print "Tag:",tag
 		except BlogPost.DoesNotExist:
 			raise Http404
 	else :

@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+#encoding:utf-8
+
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.sitemaps.views import sitemap
@@ -31,6 +33,9 @@ urlpatterns = patterns('',
     url(r'^blog/$', index),
     url(r'^blog/(\d+)$', blog),
 
+    # FIXME: 实现按照类别、标签查看
+    url(r'^cata/(.+)$', index),
+    url(r'^tag/(\w+)$', index)
     
 )
 # 站长认证

@@ -9,7 +9,7 @@ from profile import profile_list
 
 from markdown import markdown
 
-def index(request):
+def index(request, nonce=None):
 	global profile_list
 
 	blog_list = BlogPost.objects.all()

@@ -41,9 +41,10 @@ header nav ul li a:hover, #nav_current { text-decoration: blink; color: #fff; ba
 #bloglist>li { border-right: #111 2px solid; padding: 20px 0; }
 #bloglist .details { background: rgba(1,1,1,0.3); border-radius: 0 0 6px 6px; padding: 0 10px }
 .details li { line-height: 26px; display: inline; font-size: 18px; margin-right: 10px; }
-.details li a { color: #3F3E3C }
-.details li a:hover { color: #933 }
-.preview {padding: 10px; }
+.details>.preview li a { color: #3F3E3C }
+.details>.preview li a:hover { color: #933 }
+.tags { padding-left: 25px; }
+.preview { padding: 10px; }
 /*---aside侧边栏---*/
 aside { width: 100%; float: right; margin: 20px 0; }
 aside h2, footer h2 { font-size: 16px; margin-bottom: 10px; text-shadow: #000 1px 1px 1px; color: #ccc }
