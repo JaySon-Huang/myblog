@@ -25,6 +25,17 @@ def index(request, nonce=None):
 		context_instance=RequestContext(request)
 	)
 
+def web_homework(request, no):
+	no = int(no)
+	title = ""
+	template_path = "WebCourse/%d.html"%(no,)
+
+	return render_to_response(
+		template_path,
+		{},
+		context_instance=RequestContext(request)
+	)
+
 def google_verify(request):
 	return render_to_response(
 		'google08a282ae4299a9ec.html',

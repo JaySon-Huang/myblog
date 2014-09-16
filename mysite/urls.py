@@ -6,7 +6,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 
-from mysite.views import index,google_verify,baidu_verify
+from mysite.views import index
+from mysite.views import google_verify,baidu_verify
+from mysite.views import web_homework
 from blog.views import blog
 from blog.models import BlogPost
 
@@ -48,6 +50,10 @@ from mysite.views import sitemap_temp
 urlpatterns += patterns('',
 	# url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
     # name='django.contrib.sitemaps.views.sitemap')
-	url(r'^sitemap\.xml$',sitemap_temp)
+	url(r'^sitemap\.xml$',sitemap_temp),
+)
+# 14年web程序设计
+urlpatterns += patterns('',
+    url(r'^web/(\d+)$', web_homework),
 )
 urlpatterns += staticfiles_urlpatterns()
