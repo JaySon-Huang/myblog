@@ -11,13 +11,14 @@
   <h1 class="title">{{ blog.title }}</h1>
   <ul class="details">
     <li class="icon-time"><span class="timestamp"><span class="clock">&#9719;</span>{{ blog.timestamp }}</span></li>
-    <li class="cata">分类:<a href="/cata/{{ blog.catalogue|urlize }}">{{ blog.catalogue }}</a></li>
-    <li><a href="{{ object.get_absolute_url }}#disqus_thread" data-disqus-identifier="{{ blog.id }}">查看评论</a></li>
+    <li class="cata">Catalogue:<a href="/cata/{{ blog.catalogue|urlize }}">{{ blog.catalogue }}</a></li>
+    <li class="pv">views:{{ blog.page_view }}</li>
     <br />
     <li class="tags">Tags:
     {% for tag in blog.tags.all %}
       <a href="/tag/{{ tag.title|lower }}">{{ tag.title }}</a>{% if not forloop.last %},{% endif %}
     {% endfor %}</li>
+    <li><a href="{{ object.get_absolute_url }}#disqus_thread" data-disqus-identifier="{{ blog.id }}">View Comments</a></li>
   </ul>
   <div class="body">
     {{ blog.body|pygmentize|safe }}

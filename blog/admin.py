@@ -5,7 +5,7 @@ from django.contrib import admin
 from blog.models import BlogPost, BlogCatalogue, BlogTag, Comment
 
 class BlogPostAdmin(admin.ModelAdmin):
-	list_display = ('title', 'timestamp', 'catalogue')
+	list_display = ('title', 'timestamp', 'catalogue', 'page_view', )
 
 admin.site.register(BlogPost, BlogPostAdmin)
 

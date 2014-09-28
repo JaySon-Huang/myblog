@@ -19,6 +19,8 @@ def blog(request, blog_id):
 		try:
 			record = BlogPost.objects.get(id=blog_id)
 			record.body = markdown(unicode(record.body))
+			record.page_view += 1
+			BlogPost.objects.filter(id=record.id).update(page_view=record.page_view)
 			for tag in record.tags.all():
 				print "Tag:",tag
 		except BlogPost.DoesNotExist:

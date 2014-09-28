@@ -32,6 +32,7 @@ class BlogPost(models.Model):
 	title = models.CharField(max_length = 256)
 	body = models.TextField()
 	timestamp = models.DateTimeField()
+	page_view = models.IntegerField()
 
 	'''one to many.一篇blog只能对应一个分类。'''
 	catalogue = models.ForeignKey(BlogCatalogue, related_name='catalogue_post')
