@@ -6,7 +6,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 
-from mysite.views import index
+from mysite.views import index,catalogue
 from mysite.views import google_verify,baidu_verify
 from mysite.views import web_homework
 from blog.views import blog
@@ -36,7 +36,7 @@ urlpatterns = patterns('',
     url(r'^blog/(\d+)$', blog),
 
     # FIXME: 实现按照类别、标签查看
-    url(r'^cata/(.+)$', index),
+    url(r'^cata/(.+)$', catalogue),
     url(r'^tag/(\w+)$', index)
     
 )
