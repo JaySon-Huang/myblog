@@ -54,11 +54,14 @@ def web_homework(request, no):
 	title = ""
 	template_path = "WebCourse/%d.html"%(no,)
 
-	return render_to_response(
-		template_path,
-		{},
-		context_instance=RequestContext(request)
-	)
+	try :
+		return render_to_response(
+			template_path,
+			{},
+			context_instance=RequestContext(request)
+		)
+	except :
+		raise Http404
 
 def google_verify(request):
 	return render_to_response(
