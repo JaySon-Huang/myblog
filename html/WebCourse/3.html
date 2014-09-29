@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 0x3 - JavaScript DOM操作、定时器</title>
+	<link href="{% static 'WebCourse/3/styles.css' %}" rel="stylesheet" type="text/css" />
+	<!-- jQuery -->
+	<script type="text/javascript" src="{% static 'WebCourse/3/jquery-2.1.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'WebCourse/3/script.js' %}"></script>
+</head>
+<body>
+	<div id='content'>
+	<h1>Exercise 0x3 - JavaScript DOM操作、定时器</h1>
+	<h2>推荐电影：</h2>
+	<input type="button" value="对电影名称进行反序" onclick="onReverseBtnClick()"></button>
+	<br />
+	<input type="button" value="对电影列表顺序进行反序" onclick="onReverListClick()"></button>
+	<ul id="movie_names">
+		<li><span class="m_name">盗梦空间</span>&nbsp;&nbsp;<a href="http://movie.douban.com/subject/3541415/">@豆瓣</a></li>
+		剧情简介：道姆·柯布（莱昂纳多·迪卡普里奥 Leonardo DiCaprio 饰）与同事阿瑟（约瑟夫·戈登-莱维特 Joseph Gordon-Levitt 饰）和纳什（卢卡斯·哈斯 Lukas Haas 饰）在一次针对日本能源大亨齐藤（渡边谦 饰）的盗梦行动中失败，反被齐藤利用。齐藤威逼利诱因遭通缉而流亡海外的柯布帮他拆分他竞争对手的公司，采取极端措施在其唯一继承人罗伯特·费希尔（希里安·墨菲 Cillian Murphy 饰）的深层潜意识中种下放弃家族公司、自立门户的想法。为了重返美国，柯布偷偷求助于岳父迈尔斯（迈克尔·凯恩 Michael Caine 饰），吸收了年轻的梦境设计师艾里阿德妮（艾伦·佩吉 Ellen Page 饰）、梦境演员艾姆斯（汤姆·哈迪 Tom Hardy 饰）和药剂师约瑟夫（迪利普·劳 Dileep Rao 饰）加入行动。在一层层递进的梦境中，柯布不仅要对付费希尔潜意识的本能反抗，还必须直面已逝妻子梅尔（玛丽昂·歌迪亚 Marion Cotillard 饰）的处处破坏，实际情况远比预想危险得多……
+		<li><span class="m_name">喜剧之王</span>&nbsp;&nbsp;<a href="http://movie.douban.com/subject/1302425/">@豆瓣</a></li>
+		剧情简介：尹天仇（周星驰 饰）一直醉心戏剧，想成为一名演员，平时除了做跑龙套以外，还会在街坊福利会里开设演员训练班。此时舞小姐柳飘飘在妈妈桑的带领下来到这里要求学做戏，原来柳飘飘有一段非常不愉快的经历，在尹天仇对她指导的过程中，柳飘飘对尹天仇渐生情愫，同时她也成为了夜总会里当红的小姐。尹天仇受到了极多白眼之后，终于得到了大明星鹃姐（莫文蔚 饰）的赏识，提携他担演新戏中的男主角，但没想到突然把他的角色换掉了，令他失望不已。在片场当场务的卧底警员（吴孟达 饰）身份被识穿，尹天仇阴差阳错的帮忙破了案。之后尹天仇继续活跃在街坊福利会的演员训练班里。
+		<li><span class="m_name">寻找小糖人</span>&nbsp;&nbsp;<a href="http://movie.douban.com/subject/7015798/">@豆瓣</a></li>
+		剧情简介：罗德里格斯在上世纪70年代发行过两张专辑《Cold Fact》与《Coming From Reality》，在南非有超过50万的销量且知名度可与滚石乐队相提并论。但与其他知名的美国歌手不同，南非的歌迷得不到任何一点关于罗德里格斯的信息，除了专辑歌曲之外唯一能了解的只有专辑封面上一张并不清晰的相片。两张专辑后，他好像也就此销声匿迹。<br />
+		　　对于在南非的辉煌成绩，罗德里格斯其实并不知情，他在美国过着截然不同的生活，没有知名度，专辑销量不佳，被唱片公司抛弃，曾经一度做着装修屋顶的体力活…… 南非开普敦一家唱片店老板斯蒂芬与音乐记者克雷格听到罗德里格斯在舞台上奇特自杀的传闻后展开调查，寻找小糖人之路就此开始，一段神秘的传奇故事就此展开……
+		<li><span class="m_name">肖申克的救赎</span>&nbsp;&nbsp;<a href="http://movie.douban.com/subject/1292052/">@豆瓣</a></li>
+		剧情简介：20世纪40年代末，小有成就的青年银行家安迪（蒂姆·罗宾斯 Tim Robbins 饰）因涉嫌杀害妻子及她的情人而锒铛入狱。在这座名为肖申克的监狱内，希望似乎虚无缥缈，终身监禁的惩罚无疑注定了安迪接下来灰暗绝望的人生。未过多久，安迪尝试接近囚犯中颇有声望的瑞德（摩根·弗里曼 Morgan Freeman 饰），请求对方帮自己搞来小锤子。以此为契机，二人逐渐熟稔，安迪也仿佛在鱼龙混杂、罪恶横生、黑白混淆的牢狱中找到属于自己的求生之道。他利用自身的专业知识，帮助监狱管理层逃税、洗黑钱，同时凭借与瑞德的交往在犯人中间也渐渐受到礼遇。表面看来，他已如瑞德那样对那堵高墙从憎恨转变为处之泰然，但是对自由的渴望仍促使他朝着心中的希望和目标前进。而关于其罪行的真相，似乎更使这一切朝前推进了一步…… 
+		<li><span class="m_name">这个杀手不太冷</span>&nbsp;&nbsp;<a href="http://movie.douban.com/subject/1295644/">@豆瓣</a></li>
+		剧情简介：里昂（让·雷诺饰）是名孤独的职业杀手，受人雇佣。一天，邻居家小姑娘马蒂尔达（纳塔丽·波特曼饰)敲开他的房门，要求在他那里暂避杀身之祸。原来邻居家的主人是警方缉毒组的眼线，只因贪污了一小包毒品而遭恶警（加里·奥德曼饰）杀害全家的惩罚。马蒂尔达得到里昂的留救，幸免于难，并留在里昂那里。里昂教小女孩使枪，她教里昂法文，两人关系日趋亲密，相处融洽。<br />
+		　　女孩想着去报仇，反倒被抓，里昂及时赶到，将女孩救回。混杂着哀怨情仇的正邪之战渐次升级，更大的冲突在所难免……
+		<li><span class="m_name">乌云背后的幸福线</span>&nbsp;&nbsp;<a href="http://movie.douban.com/subject/3094909/">@豆瓣</a></li>
+		剧情简介：本身生性开朗乐观的中学教师帕特（布莱德利·库珀 Bradley Cooper 饰）回家撞见老婆出轨后因精神创伤被父母送进医院进行精神治疗。出院后帕特回到父母家与父母同住，在父亲（罗伯特·德尼罗 Robert De Niro 饰）与母亲（杰基·韦佛 Jacki Weaver 饰）的过度关怀下不免觉得压抑。一次聚会上帕特遇到了刚刚失去丈夫和工作的年轻女子蒂凡妮（詹妮弗·劳伦斯 Jennifer Lawrence 饰）。浑身是刺的蒂凡妮与帕特处处针锋相对，令帕特一开始唯恐避之不及。但随着两人接触的深入，帕特渐渐发现了蒂凡妮的动人之处，蒂凡妮也发现了帕特身上难以磨灭的乐观精神。蒂凡妮要求帕特与她共同练舞参加比赛，两人的关系开始向积极的方向改善。在舞蹈比赛的赛场，帕特终于找到了一生的所爱，而他与蒂凡妮的生活也拨开乌云重见阳光。 
+	</ul>
+
+<script>
+	setChangeliColorTimer(1000)
+</script>
+	</div>
+</body>
+</html>
