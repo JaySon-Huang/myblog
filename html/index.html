@@ -14,7 +14,7 @@
       <ul class="details">
         <li class="icon-time"><span class="timestamp"><span class="clock">&#9719;</span>{{ blog.timestamp }}</span></li>
         <li class="cata">Catalogue:<a href="/cata/{{ blog.catalogue|urlize }}">{{ blog.catalogue }}</a></li>
-        <li class="pv">views:{{ blog.page_view }}</li>
+        <!-- <li class="pv">views:{{ blog.page_view }}</li> -->
         <br />
         <li class="tags">Tags:
           {% for tag in blog.tags.all %}
