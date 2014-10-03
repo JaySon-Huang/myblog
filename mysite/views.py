@@ -15,6 +15,11 @@ def index(request, nonce=None):
 	global profile_list
 
 	blog_list = BlogPost.objects.all()
+	cata_list = BlogCatalogue.objects.all()
+
+	# print 'scanning catalogue list:'
+	# for cata in cata_list:
+	# 	print cata.title, cata.catalogue_post.count()
 
 	for blog in blog_list:
 		blog.body = markdown(unicode(blog.body[:300]))
@@ -23,12 +28,15 @@ def index(request, nonce=None):
 		'index.html',
 		{'profile_list': profile_list,
 		 'blog_list': blog_list,
+		 'cata_list': cata_list,
 		 },
 		context_instance=RequestContext(request)
 	)
 
 def catalogue(request, cata_name):
 	global profile_list
+
+	cata_list = BlogCatalogue.objects.all()
 
 	if cata_name is not None and cata_name != "":
 		try :
@@ -45,6 +53,8 @@ def catalogue(request, cata_name):
 		'index.html',
 		{'profile_list': profile_list,
 		 'blog_list': blog_list,
+		 'cata_list':cata_list,
+		 'current_cata':cata_name,
 		 },
 		context_instance=RequestContext(request)
 	)

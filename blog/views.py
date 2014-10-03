@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response
 
 from django.http import Http404
 
-from models import BlogPost
+from models import BlogPost, BlogCatalogue
 from mysite.profile import profile_list
 
 from markdown import markdown
@@ -14,6 +14,8 @@ from markdown import markdown
 # Create your views here.
 def blog(request, blog_id):
 	global profile_list
+
+	cata_list = BlogCatalogue.objects.all()
 
 	if blog_id is not None:
 		try :
@@ -30,12 +32,9 @@ def blog(request, blog_id):
 
 	return render_to_response(
 		'blog.html',
-		{"profile_list":profile_list,
-		"blog":record,
+		{'profile_list':profile_list,
+		 'blog':record,
+		 'cata_list':cata_list,
 		},
 		context_instance=RequestContext(request)
 	)
-
-
-
-

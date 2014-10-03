@@ -47,8 +47,28 @@
       <aside>
         <div class="search">
           <form class="searchform" method="get" action="">
-          <input type="search" name="q" value="{% if q %}{{ q }}{% endif %}"  placeholder="Search Blog" >
-        </form>
+            <input type="search" name="q" value="{% if q %}{{ q }}{% endif %}"  placeholder="Search Blog" >
+          </form>
+        </div>
+        <div class="catalogue">
+          <h2>目录</h2>
+          <hr />          
+          <ul>
+          {% if not current_cata %}
+            <li class="current"><span class="decor">&#9660;</span><a href="/">All</a></li>
+          {% else %}
+            <li><span class="decor">&#9654;</span><a href="/">All</a></li>
+          {% endif %}
+          {% for cata in cata_list %}
+            {% if current_cata == cata.title %}
+            <li class="current"><span class="decor">&#9660;</span>
+            {% else  %}
+            <li><span class="decor">&#9654;</span>
+            {% endif %}
+            <a href="/cata/{{ cata.title }}">{{ cata.title }}&nbsp;({{cata.catalogue_post.count}})</a>
+            </li>
+          {% endfor %}
+          </ul>
         </div>
       </aside>
       </div>
