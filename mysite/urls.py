@@ -7,7 +7,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 
 from mysite.views import index,catalogue
-from mysite.views import google_verify,baidu_verify
+from mysite.views import google_verify,baidu_verify,baidu_verify2
 from mysite.views import web_homework
 from blog.views import blog
 from blog.models import BlogPost
@@ -44,6 +44,7 @@ urlpatterns = patterns('',
 urlpatterns += patterns('',
 	url(r'^google08a282ae4299a9ec.html$', google_verify),
     url(r'^baidu_verify_khKBt7UZo7.html$', baidu_verify),
+    url(r'^baidu_verify_QnWi0gN0st.html$', baidu_verify2)
 )
 # sitemap
 from mysite.views import sitemap_temp

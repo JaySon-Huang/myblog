@@ -86,6 +86,12 @@ def baidu_verify(request):
 		{},
 		context_instance=RequestContext(request)
 	)
+def baidu_verify2(request):
+	return render_to_response(
+		'baidu_verify_QnWi0gN0st.html',
+		{},
+		context_instance=RequestContext(request),
+	)
 
 def sitemap_temp(request):
 	return render_to_response(

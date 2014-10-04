@@ -9,125 +9,196 @@
 <url>
   <loc>http://jaysonhwang.sinaapp.com/</loc>
   <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://jaysonhwang.sinaapp.com/blog/15</loc>
+  <loc>http://jaysonhwang.sinaapp.com/blog/19</loc>
   <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/cata/系统漏洞</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/tag/动态脚本解析</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/tag/开源工具</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/blog/14</loc>
-  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/cata/心情日志</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/tag/心情</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://jaysonhwang.sinaapp.com/tag/tic</loc>
+  <loc>http://jaysonhwang.sinaapp.com/blog/16</loc>
   <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://jaysonhwang.sinaapp.com/blog/13</loc>
+  <loc>http://jaysonhwang.sinaapp.com/cata/ctf比赛</loc>
   <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/cata/博客建设</loc>
-  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/tag/python</loc>
   <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/tag/django</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/blog/12</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/blog/11</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://jaysonhwang.sinaapp.com/cata/Web渗透</loc>
-  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/tag/xss</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/ctf</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/web</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/17</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/逆向分析</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/18</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/12</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/cata/博客建设</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/django</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/15</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/cata/安全大事记</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/动态脚本解析</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/开源工具</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/14</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/tag/tic</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/13</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/blog/11</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://jaysonhwang.sinaapp.com/cata/Web渗透</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/10</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/tag/知乎</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/9</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/8</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/cata/小工具</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/tag/github</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/7</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/6</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/5</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/4</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/tag/sae</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/3</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/blog/1</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://jaysonhwang.sinaapp.com/cata/Docs</loc>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 </urlset>
