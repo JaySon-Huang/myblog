@@ -8,11 +8,12 @@ from django.http import Http404
 
 from blog.models import BlogPost, BlogCatalogue
 from profile import profile_list
+from settings import IS_ONLINE
 
 from markdown import markdown
 
 def index(request, nonce=None):
-	global profile_list
+	global profile_list,IS_ONLINE
 
 	blog_list = BlogPost.objects.all()
 	cata_list = BlogCatalogue.objects.all()
@@ -29,12 +30,13 @@ def index(request, nonce=None):
 		{'profile_list': profile_list,
 		 'blog_list': blog_list,
 		 'cata_list': cata_list,
+		 'IS_ONLINE': IS_ONLINE,
 		 },
 		context_instance=RequestContext(request)
 	)
 
 def catalogue(request, cata_name):
-	global profile_list
+	global profile_list,IS_ONLINE
 
 	cata_list = BlogCatalogue.objects.all()
 
@@ -53,8 +55,9 @@ def catalogue(request, cata_name):
 		'index.html',
 		{'profile_list': profile_list,
 		 'blog_list': blog_list,
-		 'cata_list':cata_list,
-		 'current_cata':cata_name,
+		 'cata_list': cata_list,
+		 'current_cata': cata_name,
+		 'IS_ONLINE': IS_ONLINE,
 		 },
 		context_instance=RequestContext(request)
 	)
