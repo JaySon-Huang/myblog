@@ -48,7 +48,12 @@ urlpatterns += patterns('',
          {'sitemaps': sitemaps},),
 	url(r'^sitemap-(?P<section>.+)\.xml$', 'django.contrib.sitemaps.views.sitemap',
          {'sitemaps': sitemaps},),
-	# url(r'^sitemap\.xml$',sitemap_temp),
+)
+
+# feed
+from blog.feeds import BlogPostFeed
+urlpatterns += patterns('',
+    url(r'^rss/$', BlogPostFeed())
 )
 
 # 14年Web程序设计课堂练习
