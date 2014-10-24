@@ -3,8 +3,6 @@
 
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.sitemaps.views import sitemap
-from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 
 from mysite.views import index,catalogue
 from mysite.views import google_verify,baidu_verify,baidu_verify2
@@ -15,16 +13,6 @@ from blog.models import BlogPost
 
 from django.contrib import admin
 admin.autodiscover()
-
-info_dict = {
-    'queryset': BlogPost.objects.all(),
-    'date_field': 'timestamp',
-}
-
-sitemaps = {
-    'flatpages': FlatPageSitemap,
-    'blog': GenericSitemap(info_dict, priority=0.6),
-}
 
 urlpatterns = patterns('',
     # url(r'^$', 'mysite.views.home', name='home'),
@@ -46,14 +34,25 @@ urlpatterns += patterns('',
     url(r'^baidu_verify_khKBt7UZo7.html$', baidu_verify),
     url(r'^baidu_verify_QnWi0gN0st.html$', baidu_verify2)
 )
+
 # sitemap
 from mysite.views import sitemap_temp
+from django.contrib.sitemaps.views import sitemap
+from blog.BlogSitemap import BlogPostSitemap, BlogCatalogueSitemap, BlogTagSitemap
+sitemaps = {
+    'blog': BlogPostSitemap,
+    'catalogue': BlogCatalogueSitemap,
+    'tag': BlogTagSitemap,
+}
 urlpatterns += patterns('',
-	# url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
-    # name='django.contrib.sitemaps.views.sitemap')
-	url(r'^sitemap\.xml$',sitemap_temp),
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.index',
+         {'sitemaps': sitemaps},),
+	url(r'^sitemap-(?P<section>.+)\.xml$', 'django.contrib.sitemaps.views.sitemap',
+         {'sitemaps': sitemaps},),
+	# url(r'^sitemap\.xml$',sitemap_temp),
 )
-# 14年web程序设计
+
+# 14年Web程序设计课堂练习
 urlpatterns += patterns('',
     url(r'^web/(\d+)$', web_homework),
 )

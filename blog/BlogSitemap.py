@@ -2,13 +2,11 @@
 #encoding:utf-8
 
 from django.contrib.sitemaps import Sitemap
-from models import BlogPost
+from models import BlogPost, BlogCatalogue, BlogTag
 
-class BlogPost(Sitemap):
-    changefreq = "weekly"
-    priority = 0.5
-
-    domain_name = 'jaysonhwang.sinaapp.com'
+class BlogPostSitemap(Sitemap):
+    changefreq = "daily"
+    priority = 0.8
 
     def items(self):
         return BlogPost.objects.all()
@@ -17,4 +15,25 @@ class BlogPost(Sitemap):
         return obj.timestamp
 
     def location(self, obj):
-    	return domain_name + '/blog/' + obj.id
+    	return u'/blog/%d/'%(obj.id)
+
+class BlogCatalogueSitemap(Sitemap):
+	changefreq = "weekly"
+	priority = 0.1
+
+	def items(self):
+		return BlogCatalogue.objects.all()
+
+	def location(self, obj):
+		return u'/cata/%s/'%(obj.title)
+
+class BlogTagSitemap(Sitemap):
+	changefreq = "weekly"
+	priority = 0.1
+
+	def items(self):
+		return BlogTag.objects.all()
+
+	def location(self, obj):
+		return u'/tag/%s/'%(obj.title)
+
