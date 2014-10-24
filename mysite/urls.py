@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     url(r'^tag/(\w+)$', index)
     
 )
+
 # 站长认证
 urlpatterns += patterns('',
 	url(r'^google08a282ae4299a9ec.html$', google_verify),
@@ -36,9 +37,7 @@ urlpatterns += patterns('',
 )
 
 # sitemap
-from mysite.views import sitemap_temp
-from django.contrib.sitemaps.views import sitemap
-from blog.BlogSitemap import BlogPostSitemap, BlogCatalogueSitemap, BlogTagSitemap
+from blog.sitemaps import BlogPostSitemap, BlogCatalogueSitemap, BlogTagSitemap
 sitemaps = {
     'blog': BlogPostSitemap,
     'catalogue': BlogCatalogueSitemap,

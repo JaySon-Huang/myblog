@@ -96,9 +96,3 @@ def baidu_verify2(request):
 		context_instance=RequestContext(request),
 	)
 
-def sitemap_temp(request):
-	return render_to_response(
-		'sitemap_.xml',
-		{},
-		context_instance=RequestContext(request)
-	)
