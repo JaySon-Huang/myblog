@@ -9,25 +9,23 @@
 
     <link rel="alternate" hreflang="zh" href="http://jaysonhwang.sinaapp.com/" />
   {% if IS_ONLINE %}
-    <link href="http://jaysonhwang-static.stor.sinaapp.com/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://jaysonhwang-static.stor.sinaapp.com/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="http://jaysonhwang-static.stor.sinaapp.com/css/styles.css" rel="stylesheet">
-    <link href="http://jaysonhwang-static.stor.sinaapp.com/css/view.css" rel="stylesheet">
-    <link href="http://jaysonhwang-static.stor.sinaapp.com/css/animation.css" rel="stylesheet">
-    <link href="http://jaysonhwang-static.stor.sinaapp.com/css/code.css" rel="stylesheet">
-    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/js/jquery.js"></script>
-    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/js/js.js"></script>
+
+    {% for css in css_files %}
+    <link rel="stylesheet" href="http://jaysonhwang-static.stor.sinaapp.com/css/{{ css }}">
+    {% endfor %}
+    {% for js in js_files %}
+    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/js/{{ js }}"></script>
+    {% endfor %}
+
   {% else %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/view.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animation.css' %}">
-    <link rel="stylesheet" href="{% static 'css/code.css' %}">
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+
+    {% for css in css_files %}
+    <link rel="stylesheet" href="{% static css %}">
+    {% endfor %}
+    {% for js in js_files %}
+    <script type="text/javascript" src="{% static js %}"></script>
+    {% endfor %}
+    
   {% endif %}
     <!--[if lt IE 9]>
       <script src="http://jaysonhwang-static.stor.sinaapp.com/js/modernizr.js"></script>

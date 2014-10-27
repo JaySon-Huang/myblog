@@ -7,7 +7,7 @@ from django.shortcuts import render_to_response
 from django.http import Http404
 
 from models import BlogPost, BlogCatalogue
-from mysite.profile import profile_list
+from mysite.views import render_default
 
 from markdown import markdown
 
@@ -30,11 +30,11 @@ def blog(request, blog_id):
 	else :
 		raise Http404
 
-	return render_to_response(
+	return render_default(
 		'blog.html',
-		{'profile_list':profile_list,
-		 'blog':record,
-		 'cata_list':cata_list,
+		{
+		'blog'      : record,
+		'cata_list' : cata_list,
 		},
-		context_instance=RequestContext(request)
+		request
 	)
