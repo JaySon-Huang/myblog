@@ -53,7 +53,7 @@ urlpatterns += patterns('',
 # feed
 from blog.feeds import BlogPostFeed
 urlpatterns += patterns('',
-    url(r'^rss/$', BlogPostFeed())
+    url(r'^feed/$', BlogPostFeed())
 )
 
 # 14年Web程序设计课堂练习

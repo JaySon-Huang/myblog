@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% load disqus_tags %}
+{% load endless %}
 
 {% block title %}JaySon的小黑屋{% endblock %}
 
 {% block content %}
 <ul id="bloglist">
+{% paginate blog_list %}
 {% for blog in blog_list %}
   <li>
     <div class="arrow_box">
@@ -26,6 +28,7 @@
       </ul>
     </div><!--arrow_box end-->
   </li>
-  {% endfor %}
+{% endfor %}
+{% show_pages %}
 </ul><!--bloglist end-->
 {% endblock %}
