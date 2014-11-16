@@ -12,7 +12,7 @@ a { color: #a6a6a6; text-decoration: none; transition: All 1s ease; -webkit-tran
 a:link,a:focus {text-decoration: none;}
 a:hover { color: #fff; }
 blockquote {border-left :5px solid #eecc22;}
-.blank { height: 5px; overflow: scroll; width: 100%; margin: auto; clear: both }
+.blank { height: 5px; overflow: visible; width: 100%; margin: auto; clear: both }
 /*---nav 一级导航---*/
 header { width: 100%; background: #222; height: 70px; border-bottom: #464647 1px solid; }
 header nav { margin: 0 auto; width: 1000px; padding-top: 15px }
@@ -21,7 +21,7 @@ header nav ul li a { color: #E7E7E7; display: block; padding: 0 20px; margin-rig
 header nav ul li a:hover, #nav_current { text-decoration: blink; color: #fff; background: rgba(20, 20, 20, 0.8); box-shadow: 0 1px 0 rgba(255,255,255,.1), inset 0 1px 1px rgba(0,0,0,.7); border-radius: 6px; }
 .container { border-top: #000 1px solid; }
 /*---个人信息---*/
-.info { width: 240px; overflow: scroll; clear: both; margin: 0 auto; padding: 5px;}
+.info { width: 240px; overflow: visible; clear: both; margin: 0 auto; padding: 5px;}
 .info h1 {text-align: center; color: #fff; font: 24px "微软雅黑", "Microsoft YaHei", Arial, Helvetica, sans-serif; }
 /*---博客列表---*/
 #content { margin: 0 auto 20px; }
@@ -56,11 +56,11 @@ aside div { box-shadow: 0 1px 0 rgba(255,255,255,.1), inset 0 1px 1px rgba(0,0,0
 .catalogue .decor { color: white; font-size: 10px; padding-right: 5px; }
 .catalogue .current * { color: #dd9933; }
 /*---search--*/
-.searchform { overflow: scroll; padding: 10px; }
+.searchform { overflow: visible; padding: 10px; }
 .searchform input { font-size: small; background: rgba(0, 0, 0, 0.5) url(../images/icons.png) no-repeat 3px -318px; border: 1px solid #111; width: 103%; line-height: 30px; color: #b9b9b9; padding-left: 30px; }
 /*---footer---*/
 footer { background:#1D1D1D; padding: 10px; -webkit-box-shadow: 0 -1px 0 rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09); -moz-box-shadow: 0 -1px 0 rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09); box-shadow: 0 -1px 0 rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09); }
-.footer-mid { width: 1000px; margin: auto; padding: 20px 0; overflow: scroll; }
+.footer-mid { width: 1000px; margin: auto; padding: 20px 0; overflow: visible; }
 .footer-mid li { line-height: 26px; }
 .footer-bottom { text-align: center; }
 .footer-bottom a {  }
