@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 0x4 - JavaScript DOM事件、DOM操作</title>
+	<link href="{% static 'WebCourse/4/styles.css' %}" rel="stylesheet" type="text/css" />
+	<!-- jQuery -->
+    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/js/jquery.js"></script>
+    <script type="text/javascript" src="{% static 'WebCourse/4/script.js' %}"></script>
+</head>
+<body>
+	<div id='to-do'>
+		<h1>待办事项列表</h1>
+		<form id='new_event' action='POST'>
+			在这里填入待办事项内容:
+			<textarea name='c' id='content_to_add'></textarea>
+			<input type='button' value='添加' onclick='on_add_clicked()' />
+		</form>
+		<ul id='list'>
+			<li><input type='checkbox' value='Finish Web Exercise 4' onclick='on_select()'>&nbsp;&nbsp;Finish Web Exercise 4</li>
+			<li><input type='checkbox' value='网络攻防实验报告' onclick='on_select()'>&nbsp;&nbsp;网络攻防实验报告</li>
+		</ul>
+		<input type='button' value='选择全部' onclick='on_select_all()' />
+		<input type='button' value='删除全部' onclick='on_remove_all()' />
+		<input type='button' value='删除' onclick='on_remove()' />
+		<br /><span id='status'></span><br />
+		<script>$('#status').text('当前有'+$('#list li').length+'个待办事项.');</script>
+	</div>
+</body>
+</html>

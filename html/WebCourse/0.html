@@ -8,6 +8,7 @@
 	<body>
 		<div class="content">
 		<h1>Exercise 0 - HTML、CSS基础</h1>
+		<span id='visit'></span>
 		<hr />
 		<h2>个人介绍</h2>
 		<img src="{% static 'WebCourse/0/profile_icon.jpg' %}" alt="JaySon." /><br />
@@ -41,5 +42,18 @@
 	    </a>
 	    <h2><a href="http://222.201.132.37/web">Web课程网站</a></h2>
 		</div>
+		<script>
+			var visitspan=document.getElementById('visit');
+			if (window.localStorage){
+				if(!localStorage.getItem('visit')){
+					localStorage.setItem('visit',0);
+				}
+				localStorage['visit']=parseInt(localStorage['visit'])+1;
+				visitspan.innerHTML='打开过此网页'+localStorage['visit']+'次.'
+			}else{
+				visitspan.innerHTML='正在使用的浏览器不支持HTML5本地存储.'
+			}
+
+		</script>
 	</body>
 </html>

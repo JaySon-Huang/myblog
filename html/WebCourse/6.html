@@ -1,0 +1,92 @@
+<!DOCTYPE html>  
+<html>
+<head>  
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Exercise 0x6 - Meshup 百度地图API的利用</title>
+	<style type="text/css">
+		html{height:100% }
+		body{height:100%; margin:0px; padding:0px; }
+		#map{height:100%; width:100%; min-height: 500px;}
+		#container{background: #cccccc; margin:20px auto; width: 800px; padding: 20px}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=Xbhkkh8ERKIxlyxgTavdiKhl"></script>
+	</head>
+	<script>
+		function add_marker (map, info){
+			// 在地图上添加标记
+			var p = new BMap.Point(info['point'][0],info['point'][1]);
+			var m = new BMap.Marker(p);
+			var lb = new BMap.Label(info['title']);
+			m.setLabel(lb);
+			m.setTitle(info['title']);
+			map.addOverlay(m);
+			// 显示详细信息
+			var opts = {
+				width  : 250,
+				height : 100,
+				title  : info['title'],
+			}
+			var iw = new BMap.InfoWindow(info['desc'], opts);
+			m.addEventListener('click', function(){
+				m.openInfoWindow(iw);
+			})
+			if (info['show_detail']){
+				m.openInfoWindow(iw);
+			}
+		}
+	</script>
+
+<body>
+	<div id="container">
+		<h1>华南理工大学南校区</h1>
+		<div id="map"></div>
+	</div>
+	<script type="text/javascript">
+		var map = new BMap.Map("map");		          // 创建地图实例
+		var point = new BMap.Point(113.412, 23.055);  // 创建点坐标
+		map.centerAndZoom(point, 17);                 // 初始化地图，设置中心点坐标和地图级别
+		// 只显示控件的平移部分功能
+		map.addControl(new BMap.NavigationControl({type: BMAP_NAVIGATION_CONTROL_PAN}));
+		map.addControl(new BMap.ScaleControl());
+		map.addControl(new BMap.OverviewMapControl());
+		map.addControl(new BMap.MapTypeControl());
+		map.setCurrentCity("广州"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+		var infos = [
+			{'title' : 'C12', 
+			 'desc'  : '计院学生宿舍。一栋基情四射的宿舍楼。',
+			 'point' : [113.406592,23.057984],
+			 'show_detail' : true,
+			},
+			{'title' : 'B3',
+			 'desc'  : '计院学院楼。实践课程的上课地点。',
+			 'point' : [113.41527,23.05214],
+			 'show_detail' : false,
+			},
+			{'title' : 'A1',
+			 'desc'  : '教学楼。平时上课地点大多在A1~A4进行。',
+			 'point' : [113.412018,23.054086],
+			 'show_detail' : false,
+			},
+			{'title' : '生活区足球场',
+			 'desc'  : '体育课上课地点。练引体向上的好地方',
+			 'point' : [113.409036,23.056164],
+			 'show_detail' : false,
+			},
+			{'title' : '教学区足球场',
+			 'desc'  : '体育课上课地点。旁边有大量的篮球场~~',
+			 'point' : [113.410347,23.051824],
+			 'show_detail' : false,
+			},
+			{'title' : '游泳池',
+			 'desc'  : '游泳课上课地点，非上课时间可以持健康证到游泳池进行游泳~',
+			 'point' : [113.41067,23.055648],
+			 'show_detail' : false,
+			},
+		]
+		for (var i=0; i!=infos.length; ++i){
+			add_marker(map, infos[i]);
+		}
+	</script>
+</body>  
+</html>

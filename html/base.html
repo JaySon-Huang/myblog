@@ -11,10 +11,10 @@
   {% if IS_ONLINE %}
 
     {% for css in css_files %}
-    <link rel="stylesheet" href="http://jaysonhwang-static.stor.sinaapp.com/css/{{ css }}">
+    <link rel="stylesheet" href="http://jaysonhwang-static.stor.sinaapp.com/{{ css }}">
     {% endfor %}
     {% for js in js_files %}
-    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/js/{{ js }}"></script>
+    <script type="text/javascript" src="http://jaysonhwang-static.stor.sinaapp.com/{{ js }}"></script>
     {% endfor %}
 
   {% else %}
