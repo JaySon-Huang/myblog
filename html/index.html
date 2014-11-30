@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'blog_base.html' %}
 {% load disqus_tags %}
 {% load endless %}
 
 {% block title %}JaySon的小黑屋{% endblock %}
 
-{% block content %}
+{% block blog %}
 <ul id="bloglist">
 {% paginate blog_list %}
 {% for blog in blog_list %}

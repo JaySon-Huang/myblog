@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'blog_base.html' %}
 {% load pygmentize %}
 {% load disqus_tags %}
 
 {% block title %}{{ blog.title }} -- JaySon{% endblock %}
 
-{% block content %}
+{% block blog %}
 {% disqus_num_replies %}
 <div id="view" class='col-md-12'>
 <div id="postview">

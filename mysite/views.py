@@ -71,14 +71,12 @@ def catalogue(request, cata_name):
 	else:
 		raise Http404
 	return render_default(
-	)
-	return render_to_response(
 		'index.html',
 		{
 		 'blog_list': blog_list,
 		 'cata_list': cata_list,
 		 'current_cata': cata_name,
-		 },
+		},
 		request
 	)
 
@@ -117,3 +115,15 @@ def baidu_verify2(request):
 		context_instance=RequestContext(request),
 	)
 
+def tic_logo(request):
+	return render_default(
+		'tic_logo.html',
+		{},
+		request,
+		more_css=('css/tic_logos.css',)
+	)
+	return render_to_response(
+		'tic_logo.html',
+		{},
+		context_instance=RequestContext(request)
+	)

@@ -33,7 +33,7 @@ urlpatterns = patterns('',
 urlpatterns += patterns('',
 	url(r'^google08a282ae4299a9ec.html$', google_verify),
     url(r'^baidu_verify_khKBt7UZo7.html$', baidu_verify),
-    url(r'^baidu_verify_QnWi0gN0st.html$', baidu_verify2)
+    url(r'^baidu_verify_QnWi0gN0st.html$', baidu_verify2),
 )
 
 # sitemap
@@ -55,9 +55,15 @@ from blog.feeds import BlogPostFeed
 urlpatterns += patterns('',
     url(r'^feed/$', BlogPostFeed())
 )
+from mysite.views import tic_logo
+# TIC logo 投票对比
+urlpatterns += patterns('',
+    url(r'^tic_logo/$', tic_logo),
+)
 
 # 14年Web程序设计课堂练习
 urlpatterns += patterns('',
     url(r'^web/(\d+)$', web_homework),
 )
 urlpatterns += staticfiles_urlpatterns()
+
