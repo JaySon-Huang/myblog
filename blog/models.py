@@ -33,6 +33,16 @@ class BlogPost(models.Model):
 	body = models.TextField()
 	timestamp = models.DateTimeField()
 	page_view = models.IntegerField()
+	# 原创/转/译
+
+	POST_TYPE_CHOICES = (
+		(0, '原创'),
+		(1, '转发'),
+		(2, '翻译'),
+	)
+	post_type = models.IntegerField(
+		choices=POST_TYPE_CHOICES,
+		default=0)
 
 	'''one to many.一篇blog只能对应一个分类。'''
 	catalogue = models.ForeignKey(BlogCatalogue, related_name='catalogue_post')

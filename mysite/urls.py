@@ -40,8 +40,8 @@ urlpatterns += patterns('',
 from blog.sitemaps import BlogPostSitemap, BlogCatalogueSitemap, BlogTagSitemap
 sitemaps = {
     'blog': BlogPostSitemap,
-    'catalogue': BlogCatalogueSitemap,
-    'tag': BlogTagSitemap,
+    # 'catalogue': BlogCatalogueSitemap,
+    # 'tag': BlogTagSitemap,
 }
 urlpatterns += patterns('',
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.index',

@@ -37,10 +37,11 @@ header nav ul li a:hover, #nav_current { text-decoration: blink; color: #fff; ba
 .cir { width: 15px; height: 15px; border-radius: 50%; position: absolute; left: 104.33%; top: 16px; background: #000; border: 2px solid #333; } /* 圆形定义边框色与背景一致 */
 .cir:hover { border: 2px solid #B9B9B9; }
 .clock { font-size: x-large; margin-right: 10px;}
-
+.post-type { font-size: large; color:#dd9933; }
 #bloglist { width: 100%; float: left; }
 #bloglist>li { border-right: #111 2px solid; padding: 20px 0; }
 #bloglist .details { background: rgba(1,1,1,0.3); border-radius: 0 0 6px 6px; padding: 0 10px }
+.details ul { padding: inherit; }
 .details li { line-height: 26px; display: inline; font-size: 18px; margin-right: 10px; }
 .details>.preview li {display: block;}
 .details>.preview li a { color: #3F3E3C }
