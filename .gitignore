@@ -52,8 +52,9 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# secret docs
-mysite/settings.py
+# 保存隐私信息的文件
 mysite/local.py
+
+# 站长工具验证所有权的文件
 html/google08a282ae4299a9ec.html
 html/baidu_verify_khKBt7UZo7.html
