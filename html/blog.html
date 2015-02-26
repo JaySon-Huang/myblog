@@ -1,8 +1,12 @@
 {% extends 'blog_base.html' %}
 {% load pygmentize %}
 {% load disqus_tags %}
+{% load staticfiles %}
 
 {% block title %}{{ blog.title }} -- JaySon{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/view.css'%}">
+{% endblock %}
 
 {% block blog %}
 {% disqus_num_replies %}
