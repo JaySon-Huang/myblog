@@ -1,15 +1,11 @@
 @charset "utf-8";
 /* view */
 code { width: 1000px ;overflow: scroll;background-color: inherit;}
-#view { margin: 20px 0 30px 0; float: left; color: #333; border-radius: 6px; background:#EAEAEA; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; line-height: 18px; }
-h2.t_nav { border-bottom: #247979 3px solid; font-size: 12px; font-weight: normal; line-height: 48px; height: 40px }
-h2.t_nav a { padding: 10px; color: #fff; }
-h2.t_nav a:first-child { background: #247979; }
-h2.t_nav a:last-child { background: #59BCBC; }
-#postview ul { margin: 0 30px 15px 30px; overflow:scroll; }
-#postview ul p { line-height: 24px; margin: 10px 0; text-indent: 2em }
-#postview .details{ border-top : 1px solid;border-color: #b3b3b3; }
-#postview .body { margin: 0 30px 15px 30px; }
-.title { text-align: center; margin: 20px 0; color: #000 }
+#view { margin: 20px 0 30px 0; float: left; color: #333; border-radius: 6px; background:#EAEAEA; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; line-height: 18px; }
+#postview { padding: 20px; line-height: 24px; }
+#postview ul p { margin: 15px 5px;}
+#postview .title { text-align: center; padding: 20px 0; color: #000; border-bottom : 1px solid; }
+#postview .details{ border-color: #b3b3b3; }
+/*#postview .body { margin: 0 30px 15px 30px; }*/
 #comments {width: 660px; margin: 0 20px; }
 #view img { width: 650px;overflow: scroll; }
