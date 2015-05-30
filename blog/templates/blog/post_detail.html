@@ -1,0 +1,8 @@
+<h1>[{{ post.post_type }}]&nbsp;{{ post.title }}</h1>
+<hr />
+发布时间:{{ post.pub_date }} 修改时间:{{ post.modified_date }}
+浏览次数:{{ post.page_view }}
+<br />
+Cata:{{ post.catalogue }}&nbsp;&nbsp;Tags: {{ post.tags.names|join:"," }}
+<hr />
+{{ post.body|safe }}

@@ -1,0 +1,32 @@
+a {
+    color: #a6a6a6;
+    transform: All 1s ease;
+    -webkit-transition: All 1s ease;
+    -moz-transition: All 1s ease;
+    -ms-transition: All 1s ease;
+    -o-transition: All 1s ease;
+}
+a:hover { color: #fff; }
+a:link, a:focus { text-decoration: none; }
+body {
+    background: #333;
+}
+nav {
+    padding: 15px 0 10px 0;
+}
+#info {
+    width: 240px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+footer {
+    background: #1D1D1D; padding: 10px;
+    text-align: center;
+}
+#gotopbox {
+    font-size: 15px;
+    text-align: center;
+    width: 55px;
+    height: 55px;
+}
