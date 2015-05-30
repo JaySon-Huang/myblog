@@ -15,7 +15,7 @@ nav {
     padding: 15px 0 10px 0;
 }
 #info {
-    width: 240px;
+    width: 270px;
     text-align: center;
     color: #fff;
     font-size: 24px;
@@ -25,8 +25,21 @@ footer {
     text-align: center;
 }
 #gotopbox {
-    font-size: 15px;
+    float: right;
+    position: fixed;
+    right: 50px;
+    bottom: 15px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    background: #111;
+    font-size: 13px;
+    color: #fff;
     text-align: center;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 65px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1), inset 0 1px 1px rgba(0,0,0,.7);
+    border-radius: 13px;
+}
+#gotopbox .glyphicon {
+    font-size: 28px;
 }
