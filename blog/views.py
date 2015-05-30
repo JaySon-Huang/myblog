@@ -9,6 +9,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from .models import Post, Catalogue
 from jsite.static_vars import profile_list
 
+from taggit.models import Tag
 from markdown import markdown
 
 
@@ -24,10 +25,14 @@ def render_post(post):
 
 
 def post_all(request):
+    cata_list = Catalogue.objects.all()
+    tag_list = Tag.objects.all()
     return render_to_response(
-        'base.html',
+        'blog/blog_base.html',
         {
             'profile_list': profile_list,
+            'cata_list': cata_list,
+            'tag_list': tag_list,
         }
     )
 
@@ -43,8 +48,9 @@ def post_detail(request, post_id):
     return render_to_response(
         'blog/post_detail.html',
         {
-            'post': post,
+            'profile_list': profile_list,
             'cata_list': cata_list,
+            'post': post,
         }
     )
 

@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
   <script type="text/javascript" src="{% static 'functions.js' %}"></script>
+{% block static_files %}{% endblock %}
   </head>
 
 <body>
@@ -34,10 +35,10 @@
   </nav>{# end导航条 #}
   <div class="container">
 	<div class="container-fluid" id="info">
-    <img src="http://jaysonhwang-static.stor.sinaapp.com/images/profile_icon.jpg" alt=""><br />JaySon.
+    <!--<img src="http://jaysonhwang-static.stor.sinaapp.com/images/profile_icon.jpg" alt="">--><img src="{% static 'profile_icon.jpg' %}" alt="JaySon."><br />JaySon.
   </div> <!--info end-->
-  <div id="content" class='row-fluid'>
-  {% block content %}{% endblock %}
+  <div id="mainbody" class='row-fluid'>
+  {% block mainbody %}{% endblock %}
   </div><!--container end-->
 <footer>{# 底部栏 #}
   <div class="container">

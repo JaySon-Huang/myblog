@@ -17,7 +17,8 @@ nav {
 #info {
     width: 270px;
     text-align: center;
-    color: #fff;
+    text-shadow: #000 2px 2px 2px;
+    color: #ddd;
     font-size: 24px;
 }
 footer {

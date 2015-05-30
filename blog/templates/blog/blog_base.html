@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block static_files %}
+  <link rel="stylesheet" type="text/css" href="{% static 'blog_base.css' %}">
+{% endblock %}
+
+{% block mainbody %}
+<div class="row">
+  {% block content %}{% endblock %}
+  <div class="col-md-3 blog-sidebar">
+  <aside>{# 侧边栏 #}
+    <div class="panel search">
+      <form action="get" class="searchform">
+        <input type="search" name="q" value="{% if q %}{{ q }}{% endif %}" placeholder="Search Blog">
+      </form>
+    </div><!-- end search -->
+    <div class="panel catalogues">
+      <div class="panel-heading">目录</div>
+      <ul class="list-group">
+        {% if not current_cata %}
+        <li class="list-group-item current"><span class="decor">&#9660;</span><a href="#">All</a></li>
+        {% else %}
+        <li class="list-group-item"><span class="decor">&#9654;</span><a href="{% url 'blog:post_all' %}">All</a></li>
+        {% endif %}
+        {% for cata in cata_list %}
+          {% spaceless %}
+          {% if current_cata == cata.title %}
+          <li class="list-group-item current"><span class="decor">&#9660;</span>
+          {% else %}
+          <li class="list-group-item"><span class="decor">&#9654;</span>
+          {% endif %}
+          <a href="{% url 'blog:cata' cata.title %}">{{ cata.title }}<span class="badge">{{ cata.catalogue_post.count }}</span></a></li>
+          {% endspaceless %}
+        {% endfor %}
+      </ul>
+    </div><!-- end catalogues -->
+    <div class="panel tags">
+      <div class="panel-heading">标签</div>
+      <ul class="list-group">
+        {% for tag in tag_list %}
+          <li class="list-group-item"><span class="decor">&#9654;</span><a href="{% url 'blog:tag' tag.name %}">{{ tag.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div><!-- end tags -->
+{#    <div class="panel series"> #}
+{#    </div><!-- end series -->#}
+  </aside>
+  </div>{# end侧边栏 #}
+</div>
+{% endblock %}
