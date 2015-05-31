@@ -32,7 +32,7 @@
             </li>
             <li class="pv">View{{ post.page_view|pluralize }}:{{ post.page_view }}</li>
           </ul>
-          <div class="preview">
+          <div class="post-preview">
             {{ post.body|safe|truncatewords_html:30 }}
             <span class="more"><a href="{% url 'blog:post_detail' post.id %}">[&nbsp;More...&nbsp;]</a></span>
           </div>

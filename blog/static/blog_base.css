@@ -52,4 +52,8 @@
     margin: 0;
     padding-left: 25px;
 }
-.glyphicon {padding: 0 7px;font-size: medium;}
+.glyphicon {padding: 0 7px;font-size: medium;}/* Glyphicons 字体图标 */
+.post-type {color:#dd9933;font-size: smaller;}/* 转、译 */
+.post-details {padding: 5px 10px;}
+.post-details li {display: inline;}
+.post-details .pv {float: right;}

@@ -38,6 +38,7 @@ def post_all(request):
 
 def post_detail(request, post_id):
     cata_list = Catalogue.objects.all()
+    tag_list = Tag.objects.all()
 
     post = get_object_or_404(Post, pk=post_id)
     post.page_view += 1  # update page view
@@ -49,6 +50,8 @@ def post_detail(request, post_id):
         {
             'profile_list': profile_list,
             'cata_list': cata_list,
+            'tag_list': tag_list,
+
             'post': post,
         }
     )
