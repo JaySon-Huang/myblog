@@ -26,14 +26,14 @@
     <div class="panel catalogues">
       <div class="panel-heading">目录<span class="glyphicon glyphicon-folder-open"></span></div>
       <ul class="list-group">
-        {% if not current_cata %}
+        {% if not cur_cata %}
         <li class="list-group-item current"><span class="decor">&#9660;</span><a href="#">All</a></li>
         {% else %}
         <li class="list-group-item"><span class="decor">&#9654;</span><a href="{% url 'blog:post_all' %}">All</a></li>
         {% endif %}
         {% for cata in cata_list %}
           {% spaceless %}
-          {% if current_cata == cata.title %}
+          {% if cur_cata.title == cata.title %}
           <li class="list-group-item current"><span class="decor">&#9660;</span>
           {% else %}
           <li class="list-group-item"><span class="decor">&#9654;</span>

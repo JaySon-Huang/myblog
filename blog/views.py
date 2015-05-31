@@ -19,47 +19,62 @@ def render_post(post):
     return post
 
 
-def post_all(request):
-    cata_list = Catalogue.objects.all()
-    tag_list = Tag.objects.all()
+def context_update(new_context):
+    context = {
+        'profile_list': profile_list,
+        'cata_list': Catalogue.objects.all(),
+        'tag_list': Tag.objects.all(),
+    }
+    context.update(new_context)
+    return context
 
-    post_list = map(render_post, Post.objects.all())
+
+def post_all(request):
+    post_list = list(map(render_post, Post.objects.all()))
     return render_to_response(
         'blog/post_all.html',
-        {
-            'profile_list': profile_list,
-            'cata_list': cata_list,
-            'tag_list': tag_list,
-
+        context_update({
             'post_list': post_list,
-        }
+        })
     )
 
 
 def post_detail(request, post_id):
-    cata_list = Catalogue.objects.all()
-    tag_list = Tag.objects.all()
-
     post = get_object_or_404(Post, pk=post_id)
     post.page_view += 1  # update page view
     post.save()  # save to database
     post = render_post(post)
-
     return render_to_response(
         'blog/post_detail.html',
-        {
-            'profile_list': profile_list,
-            'cata_list': cata_list,
-            'tag_list': tag_list,
-
+        context_update({
             'post': post,
-        }
+        })
     )
 
 
 def cata(request, cata_name):
-    raise NotImplementedError
+    cata = get_object_or_404(Catalogue, title=cata_name)
+    posts_of_cata = cata.catalogue_post.all()
+    posts_of_cata = list(map(render_post, posts_of_cata))
+    return render_to_response(
+        'blog/post_all.html',
+        context_update({
+            'cur_cata': cata,
+            'post_list': posts_of_cata,
+        })
+    )
 
 
 def tag(request, tag_name):
-    raise NotImplementedError
+    tag = get_object_or_404(Tag, name=tag_name)
+    posts_of_tag = list(map(
+        render_post,
+        Post.objects.filter(tags__name__in=[tag_name])
+    ))
+    return render_to_response(
+        'blog/post_all.html',
+        context_update({
+            'cur_tag': tag,
+            'post_list': posts_of_tag,
+        })
+    )
