@@ -38,8 +38,8 @@
     padding: 2px 10px;
     margin: 0 5px;
 }
-.search input {
-    width: 100%;
+.search #q{
+    width: 80%;
     font-size: small;
     padding-left: 26px;
     background: rgba(0, 0, 0, 0.5) url(./icons.png) no-repeat 3px -318px;
@@ -47,6 +47,7 @@
     line-height: 30px;
     color: #b9b9b9;
 }
+.search #submit{width: 18%;padding: 5px 0;}
 #colorClock {
     width: 100%;
     margin: 0;

@@ -3,7 +3,7 @@
 
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
-from django.template import RequestContext
+from django.template.context_processors import csrf
 from django.shortcuts import render_to_response, get_object_or_404
 
 from .models import Post, Catalogue
@@ -31,11 +31,14 @@ def context_update(new_context):
 
 def post_all(request):
     post_list = list(map(render_post, Post.objects.all()))
+    context = context_update({
+        'post_list': post_list,
+    })
+    context.update(csrf(request))
+    print(context)
     return render_to_response(
         'blog/post_all.html',
-        context_update({
-            'post_list': post_list,
-        })
+        context
     )
 
 
@@ -77,4 +80,18 @@ def tag(request, tag_name):
             'cur_tag': tag,
             'post_list': posts_of_tag,
         })
+    )
+
+
+def search(request):
+    query = request.POST['q']
+    posts_of_search = Post.objects.filter(title__icontains=query)
+    posts_of_search = list(map(render_post, posts_of_search))
+    context = context_update({
+        'post_list': posts_of_search,
+    })
+    context.update(csrf(request))
+    return render_to_response(
+        'blog/post_all.html',
+        context
     )

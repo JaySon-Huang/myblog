@@ -19,8 +19,10 @@
   <div class="col-md-4 blog-sidebar"><aside>{# 侧边栏 #}
     <div class="panel row" id="colorClock"></div>
     <div class="panel search">
-      <form action="get" class="searchform">
-        <input type="search" name="q" value="{% if q %}{{ q }}{% endif %}" placeholder="Search Blog">
+      <form action="{% url 'blog:search' %}" method="post" class="searchform">
+        {% csrf_token %}
+        <input required="required" type="search" name="q" id="q" value="{{ q|default:"" }}" placeholder="Search Blog" />
+        <input type="submit" id="submit" value="Search" class="btn"/>
       </form>
     </div><!-- end search -->
     <div class="panel catalogues">
