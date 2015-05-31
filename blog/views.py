@@ -16,11 +16,6 @@ from markdown import markdown
 def render_post(post):
     '''render the post object before sending it to html'''
     post.body = markdown(post.body)
-    post.post_type = {
-        0: '原',
-        1: '转',
-        2: '译',
-    }[post.post_type]
     return post
 
 
@@ -28,7 +23,7 @@ def post_all(request):
     cata_list = Catalogue.objects.all()
     tag_list = Tag.objects.all()
 
-    post_list = Post.objects.all()
+    post_list = map(render_post, Post.objects.all())
     return render_to_response(
         'blog/post_all.html',
         {
