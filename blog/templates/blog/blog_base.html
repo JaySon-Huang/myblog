@@ -7,13 +7,16 @@
   <link rel="stylesheet" type="text/css" href="{% static 'jquery.tzineClock/jquery.tzineClock.css' %}">
   <script type="text/javascript" src="{% static 'jquery.tzineClock/jquery.tzineClock.js' %}"></script>
   <script type="text/javascript" src="{% static 'clock.js' %}"></script>
+  {% block blog_static_files %}{% endblock %}
+
 {% endblock %}
 
 {% block mainbody %}
 <div class="row">
-  {% block content %}{% endblock %}
-  <div class="col-md-4 blog-sidebar">
-  <aside>{# 侧边栏 #}
+  <div class="col-md-8 blog-content">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="col-md-4 blog-sidebar"><aside>{# 侧边栏 #}
     <div class="panel row" id="colorClock"></div>
     <div class="panel search">
       <form action="get" class="searchform">
@@ -50,7 +53,6 @@
     </div><!-- end tags -->
 {#    <div class="panel series"> #}
 {#    </div><!-- end series -->#}
-  </aside>
-  </div>{# end侧边栏 #}
+  </aside></div>{# end侧边栏 #}
 </div>
 {% endblock %}

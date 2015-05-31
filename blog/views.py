@@ -27,12 +27,16 @@ def render_post(post):
 def post_all(request):
     cata_list = Catalogue.objects.all()
     tag_list = Tag.objects.all()
+
+    post_list = Post.objects.all()
     return render_to_response(
-        'blog/blog_base.html',
+        'blog/post_all.html',
         {
             'profile_list': profile_list,
             'cata_list': cata_list,
             'tag_list': tag_list,
+
+            'post_list': post_list,
         }
     )
 

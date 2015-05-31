@@ -1,0 +1,24 @@
+{% extends "blog/blog_base.html" %}
+{% load staticfiles %}
+
+{% block blog_static_files %}
+  <link rel="stylesheet" type="text/css" href="{% static 'post_all.css' %}">
+{% endblock %}
+
+{% block content %}
+<ul id="bloglist">
+{% for post in post_list %}
+  <li>
+    <div class="arrow_box">
+      <div class="panel">
+        <div class="panel-heading">{{ post.title }}</div>
+        <div class="panel-body"></div>
+      </div>
+
+      <div class="tri"></div>
+      <div class="cir"></div>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

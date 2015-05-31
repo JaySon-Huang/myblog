@@ -3,13 +3,13 @@
     padding: 0 20px 0 10px;
 }
 .panel {
-    box-shadow: 0 1px 0 rgba(255,255,255,.1), inset 0 1px 1px rgba(0,0,0,.7);
-    border-radius: 6px;
     padding: 15px;
     background: #222;
     border-color: #222;
     margin-top: 35px;
     overflow: visible;
+    border-radius: 10px;
+    box-shadow: 2px 4px 20px rgba(255,255,255,.1), inset 0 1px 1px rgba(0,0,0,.7);
 }
 .panel-heading {
     background: #222;
