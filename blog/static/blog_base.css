@@ -47,3 +47,8 @@
     line-height: 30px;
     color: #b9b9b9;
 }
+#colorClock {
+    width: 100%;
+    margin: 0;
+    padding-left: 25px;
+}

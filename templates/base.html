@@ -16,6 +16,8 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
   <script type="text/javascript" src="{% static 'functions.js' %}"></script>
+  <script src="http://s.cdpn.io/277/matrix.js"></script>
+  <script type="text/javascript" src="{% static 'grass.js' %}"></script>
 {% block static_files %}{% endblock %}
   </head>
 
@@ -35,6 +37,7 @@
   </nav>{# end导航条 #}
   <div class="container">
 	<div class="container-fluid" id="info">
+    <!-- <div class="canvas"><canvas id='canvas'></canvas></div> -->
     <!--<img src="http://jaysonhwang-static.stor.sinaapp.com/images/profile_icon.jpg" alt="">--><img src="{% static 'profile_icon.jpg' %}" alt="JaySon."><br />JaySon.
   </div> <!--info end-->
   <div id="mainbody" class='row-fluid'>

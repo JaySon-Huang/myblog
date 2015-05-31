@@ -4,13 +4,17 @@
 
 {% block static_files %}
   <link rel="stylesheet" type="text/css" href="{% static 'blog_base.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'jquery.tzineClock/jquery.tzineClock.css' %}">
+  <script type="text/javascript" src="{% static 'jquery.tzineClock/jquery.tzineClock.js' %}"></script>
+  <script type="text/javascript" src="{% static 'clock.js' %}"></script>
 {% endblock %}
 
 {% block mainbody %}
 <div class="row">
   {% block content %}{% endblock %}
-  <div class="col-md-3 blog-sidebar">
+  <div class="col-md-4 blog-sidebar">
   <aside>{# 侧边栏 #}
+    <div class="panel row" id="colorClock"></div>
     <div class="panel search">
       <form action="get" class="searchform">
         <input type="search" name="q" value="{% if q %}{{ q }}{% endif %}" placeholder="Search Blog">
