@@ -29,7 +29,7 @@
       <div class="panel-heading">目录<span class="glyphicon glyphicon-folder-open"></span></div>
       <ul class="list-group">
         {% if not cur_cata %}
-        <li class="list-group-item current"><span class="decor">&#9660;</span><a href="#">All</a></li>
+        <li class="list-group-item current"><span class="decor">&#9660;</span><a href="{% url 'blog:post_all' %}">All</a></li>
         {% else %}
         <li class="list-group-item"><span class="decor">&#9654;</span><a href="{% url 'blog:post_all' %}">All</a></li>
         {% endif %}

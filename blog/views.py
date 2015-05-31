@@ -89,6 +89,7 @@ def search(request):
     posts_of_search = list(map(render_post, posts_of_search))
     context = context_update({
         'post_list': posts_of_search,
+        'q': query,
     })
     context.update(csrf(request))
     return render_to_response(
