@@ -42,7 +42,6 @@ INSTALLED_APPS = (
 
     'taggit',  # tag
     'meta',  # SEO优化
-    'bootstrap3',  # bootstrap3样式
 
     'blog',
     'misc',
