@@ -24,7 +24,7 @@
       </form>
     </div><!-- end search -->
     <div class="panel catalogues">
-      <div class="panel-heading">目录</div>
+      <div class="panel-heading">目录<span class="glyphicon glyphicon-folder-open"></span></div>
       <ul class="list-group">
         {% if not current_cata %}
         <li class="list-group-item current"><span class="decor">&#9660;</span><a href="#">All</a></li>
@@ -44,10 +44,10 @@
       </ul>
     </div><!-- end catalogues -->
     <div class="panel tags">
-      <div class="panel-heading">标签</div>
+      <div class="panel-heading">标签<span class="glyphicon glyphicon-tags"></span></div>
       <ul class="list-group">
         {% for tag in tag_list %}
-          <li class="list-group-item"><span class="decor">&#9654;</span><a href="{% url 'blog:tag' tag.name %}">{{ tag.name }}</a></li>
+          <li class="list-group-item"><span class="decor"><span class="glyphicon glyphicon-tag"></span></span><a href="{% url 'blog:tag' tag.name %}">{{ tag.name }}</a></li>
         {% endfor %}
       </ul>
     </div><!-- end tags -->

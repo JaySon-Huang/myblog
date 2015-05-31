@@ -34,7 +34,6 @@
 .arrow_box .panel-body {color: #b9b9b9;font-size: medium;}/* 正文字体 */
 .post-details {padding: 5px 10px;}
 .post-details li {display: inline;}
-.post-details .glyphicon {padding: 0 7px;}
 .post-details .pv {float: right;}
 .arrow_box .panel-body .preview {margin-top: 20px;}/* 内容和其他信息的间隔 */
 .preview .more {float: right;}/* "查看更多" */
