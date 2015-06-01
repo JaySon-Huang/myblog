@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # private stuff
 from .fuck import (
-    SECRET_KEY, DEBUG, DATABASES,
+    SECRET_KEY, DEBUG, DATABASES, DISQUS_API_KEY, DISQUS_WEBSITE_SHORTNAME
 )
 
 # TODO: 安全设置。设置可提供服务的域名
