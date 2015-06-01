@@ -6,6 +6,5 @@
 使用的第三方库：
 
 * 标签：https://github.com/alex/django-taggit
-* bootstrap3支持：https://github.com/dyve/django-bootstrap3
 * SEO(搜索引擎优化)：https://github.com/nephila/django-meta/
 * markdown解析：https://github.com/waylan/Python-Markdown
