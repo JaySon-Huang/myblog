@@ -26,6 +26,8 @@ from .fuck import (
     SECRET_KEY, DEBUG, DATABASES,
 )
 
+# TODO: 安全设置。设置可提供服务的域名
+# refer: https://docs.djangoproject.com/en/1.8/topics/security/
 ALLOWED_HOSTS = []
 
 # Application definition
