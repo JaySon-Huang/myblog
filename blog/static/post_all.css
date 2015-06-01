@@ -18,9 +18,9 @@
     border-color: transparent transparent transparent #111;
 }
 .arrow_box .cir {
+    position: absolute;
     width: 15px;height: 15px;
     border-radius: 50%;
-    position: absolute;
     left: 104.33%;
     top: 16px;
     background: #000;

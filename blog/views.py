@@ -35,7 +35,6 @@ def post_all(request):
         'post_list': post_list,
     })
     context.update(csrf(request))
-    print(context)
     return render_to_response(
         'blog/post_all.html',
         context
