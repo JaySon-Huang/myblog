@@ -3,10 +3,10 @@
 {% load staticfiles %}
 
 {% block static_files %}
-  <link rel="stylesheet" type="text/css" href="{% static 'blog_base.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'jquery.tzineClock/jquery.tzineClock.css' %}">
-  <script type="text/javascript" src="{% static 'jquery.tzineClock/jquery.tzineClock.js' %}"></script>
-  <script type="text/javascript" src="{% static 'clock.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/blog_base.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/jquery.tzineClock/jquery.tzineClock.css' %}">
+  <script type="text/javascript" src="{% static 'blog/jquery.tzineClock/jquery.tzineClock.js' %}"></script>
+  <script type="text/javascript" src="{% static 'blog/clock.js' %}"></script>
   {% block blog_static_files %}{% endblock %}
 
 {% endblock %}

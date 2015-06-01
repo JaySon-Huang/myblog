@@ -1,9 +1,10 @@
 {% extends "blog/blog_base.html" %}
 {% load staticfiles %}
 {% load humanize %}
+{% load disqus_tags %}
 
 {% block blog_static_files %}
-  <link rel="stylesheet" type="text/css" href="{% static 'post_detail.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/post_detail.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -26,10 +27,14 @@
         <a href="{% url 'blog:tag' tag|urlencode %}">{{ tag.name }}</a>{% if not forloop.last %},{% endif %}
         {% endfor %}
       </li>
+      <li>{% disqus_num_replies %}</li>
       <li class="pv">View{{ post.page_view|pluralize }}:{{ post.page_view }}</li>
     </ul>
     <div class="post-body">
       {{ post.body|safe }}
+    </div>
+    <div class="comment">
+      {% disqus_show_comments %}
     </div>
   </div>
 </div>
