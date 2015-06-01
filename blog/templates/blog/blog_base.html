@@ -17,7 +17,6 @@
     {% block content %}{% endblock %}
   </div>
   <div class="col-md-4 blog-sidebar"><aside>{# 侧边栏 #}
-    <div class="canvas"><canvas id="canvas"></canvas></div>
     <div class="panel row" id="colorClock"></div>
     <div class="panel search">
       <form action="{% url 'blog:search' %}" method="post" class="searchform">
@@ -56,6 +55,11 @@
     </div><!-- end tags -->
 {#    <div class="panel series"> #}
 {#    </div><!-- end series -->#}
+    <div class="panel canvas">
+      <div class="panel-heading">Straws</div>
+      <canvas id="canvas"></canvas>
+      <button type="button" class="btn" onclick="javascript:painter.on_mouseDown(null)">Reset</buton>
+    </div>
   </aside></div>{# end侧边栏 #}
 </div>
 {% endblock %}

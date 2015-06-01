@@ -92,7 +92,7 @@ var StrawPainter = {
             painter.new_point.y = e.layerY;
         };
         painter.on_mouseDown = function(e){
-            e.preventDefault();
+            if (e) e.preventDefault();
             painter.canvas.width = painter.canvas.width; // QUESTION:why this ?
             painter.straw_queue = [];
         };
@@ -152,7 +152,7 @@ $(document).ready(
         if (painter === null){
         painter = StrawPainter.init(document.getElementById("canvas"));
         interval = setInterval(function(){// draw the first line
-            painter.new_point.x += 20;
+            painter.new_point.x += 15;
             if (painter.new_point.x >= painter.width){
                 window.clearInterval(interval);
             }
