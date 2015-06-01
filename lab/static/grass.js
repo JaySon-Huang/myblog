@@ -1,6 +1,7 @@
 //
-//
+// origin version url: http://codepen.io/tholman/pen/Apvxe
 // Click to clear the canvas.
+// restructed by JaySon. Jun 1st, 2015.
 //
 function get_magnitude(x, y){
     return Math.sqrt((x * x) + (y * y));
@@ -27,7 +28,7 @@ var Straw = {
         }
         var tmt = new Matrix2D();
         tmt.scale(0.95, 0.95);
-        //tmt.rotate(angle);
+        // tmt.rotate(angle);
         tmt.translate(12, 0);
         
         var w = 0.5;// QUESTION:
