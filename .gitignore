@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# private stuff
+fuck.py
+# static collections
+static_collect/

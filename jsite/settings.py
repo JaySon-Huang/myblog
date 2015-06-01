@@ -21,14 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$q2ti^p=)__8=&zg_qj$f35a@$2av^!92u^r$%ormk*^gt)ok!'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# private stuff
+from .fuck import (
+    SECRET_KEY, DEBUG, DATABASES,
+)
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -45,6 +43,7 @@ INSTALLED_APPS = (
 
     'taggit',  # tag
     'meta',  # SEO优化
+    'disqus',  # 评论
 
     'blog',
     'misc',
@@ -84,18 +83,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jsite.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -114,7 +101,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collect')
