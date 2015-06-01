@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block static_files %}
+  <link rel="stylesheet" type="text/css" href="{% static 'grass.css' %}">
+  <script type="text/javascript" src="{% static 'grass.js' %}"></script>
+{% endblock %}
+
+{% block mainbody %}
+<div class="row">
+  <div class="canvas"><canvas id='canvas'></canvas></div>
+</div>
+{% endblock %}
