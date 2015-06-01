@@ -17,7 +17,6 @@
   <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
   <script type="text/javascript" src="{% static 'functions.js' %}"></script>
   <script src="http://s.cdpn.io/277/matrix.js"></script>
-  <script type="text/javascript" src="{% static 'grass.js' %}"></script>
 {% block static_files %}{% endblock %}
   </head>
 
@@ -27,17 +26,27 @@
       {# no Brand and toggle get grouped for better mobile display #}
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          {% spaceless %}{% for profile in profile_list %}
+          {% for profile in profile_list %}{% spaceless %}
             {% if forloop.first %}<li class="active">{% else %}<li>{% endif %}
+            {% if profile.drop_downs %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expaded="false">{{ profile.title }}<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                {% for action in profile.drop_downs %}
+                  <li><a href="{{ action.url }}">{{ action.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% else %}
             <a href="{{ profile.url }}" title="{{ profile.title }}">{{ profile.title }}</a></li>
-          {% endfor %}{% endspaceless %}
+            {% endif %}
+          {% endspaceless %}{% endfor %}
         </ul>
       </div>
     </div>
   </nav>{# end导航条 #}
   <div class="container">
 	<div class="container-fluid" id="info">
-    <!-- <div class="canvas"><canvas id='canvas'></canvas></div> -->
     <!--<img src="http://jaysonhwang-static.stor.sinaapp.com/images/profile_icon.jpg" alt="">--><img src="{% static 'profile_icon.jpg' %}" alt="JaySon."><br />JaySon.
   </div> <!--info end-->
   <div id="mainbody" class='row-fluid'>

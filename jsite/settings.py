@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 
     'blog',
     'misc',
+    'lab',
 )
 
 MIDDLEWARE_CLASSES = (

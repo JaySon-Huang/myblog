@@ -22,6 +22,7 @@ import misc.urls
 urlpatterns = [
     url(r'^$', blog.views.post_all),
     url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^lab/', include('lab.urls', namespace='lab')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
