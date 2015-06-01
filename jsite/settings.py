@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize',
+    'django.contrib.humanize',  # for `|naturaltime` filter
+    'django.contrib.sites',  # for sitemaps
+    'django.contrib.sitemaps',  # for sitemaps
 
     'taggit',  # tag
     'meta',  # SEO优化
@@ -47,7 +49,9 @@ INSTALLED_APPS = (
     'blog',
     'misc',
     'lab',
+    'sitemap',
 )
+SITE_ID = 1  # for sitemaps
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
