@@ -7,7 +7,7 @@ from django.template.context_processors import csrf
 from django.shortcuts import render_to_response, get_object_or_404
 
 from .models import Post, Catalogue
-from jsite.static_vars import profile_list
+from jsite.static_vars import profile_list, meta
 
 from taggit.models import Tag
 from markdown import markdown
@@ -21,6 +21,7 @@ def render_post(post):
 
 def context_update(new_context):
     context = {
+        'meta': meta,
         'profile_list': profile_list,
         'cata_list': Catalogue.objects.all(),
         'tag_list': Tag.objects.all(),

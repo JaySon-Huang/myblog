@@ -55,5 +55,7 @@ target/
 
 # private stuff
 fuck.py
+database_dump/
+
 # static collections
 static_collect/
