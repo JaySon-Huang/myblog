@@ -32,7 +32,7 @@ class PostAdmin(admin.ModelAdmin):
         }),
         ('Date information', {
             'fields': [('pub_date', 'modified_date', )],
-            'classes': ('collapse', ),
+            # 'classes': ('collapse', ),
         })
     ]
 
