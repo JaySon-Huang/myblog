@@ -44,4 +44,35 @@
   </li>
 {% endfor %}
 </ul>
+<div><ul class="pagination">
+  {% if post_list.has_previous %}{# `Previous` #}
+    <li>
+      <a href="?page={{ post_list.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&lt;</span></a>
+    </li>
+  {% else %}
+    <li class="disabled">
+      <a href="#" aria-label="Previous"><span aria-hidden="true">&lt;</span></a>
+    </li>
+  {% endif %}
+  {% for page_num in post_list.paginator.page_range %}
+    {% if page_num == post_list.number %}
+      <li class="active">
+        <a href="#">{{ page_num }}<span class="sr-only">(current)</span></a>
+      </li>
+    {% else %}
+      <li>
+        <a href="?page={{ page_num }}">{{ page_num }}<span class="sr-only">(current)</span></a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  {% if post_list.has_next %}{# `Next` #}
+    <li>
+      <a href="?page={{ post_list.next_page_number }}" aria-label="Next"><span aria-hidden="true">&gt;</span></a>
+    </li>
+  {% else %}
+    <li class="disabled">
+      <a href="#" aria-label="Next"><span aria-hidden="true">&gt;</span></a>
+    </li>
+  {% endif %}
+</ul></div>
 {% endblock %}

@@ -32,3 +32,5 @@ meta = Meta(
     use_googleplus=True,  # for google plus
     locale='zh_CN',
 )
+
+POST_PER_PAGE = 10

@@ -3,11 +3,12 @@
 
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response, get_object_or_404
 
 from .models import Post, Catalogue
-from jsite.static_vars import profile_list, meta
+from jsite.static_vars import profile_list, meta, POST_PER_PAGE
 
 from taggit.models import Tag
 from markdown import markdown
@@ -32,8 +33,16 @@ def context_update(new_context):
 
 def post_all(request):
     post_list = list(map(render_post, Post.objects.all()))
+    paginator = Paginator(post_list, POST_PER_PAGE)
+    try:
+        page = request.GET.get('page', 1)  # 1 if page not exist
+        post_in_page = paginator.page(page)
+    except PageNotAnInteger:  # If page is not an integer, deliver first page.
+        post_in_page = paginator.page(1)
+    except EmptyPage:  # If page is out of range (e.g. 9999), deliver last page of results.
+        post_in_page = paginator.page(paginator.num_pages)
     context = context_update({
-        'post_list': post_list,
+        'post_list': post_in_page,
     })
     context.update(csrf(request))
     return render_to_response(
