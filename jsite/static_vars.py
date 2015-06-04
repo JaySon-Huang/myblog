@@ -10,7 +10,7 @@ profile_list = (
             {'url': '/lab/grass', 'title': u'机械草丛'},
         )
     },
-    {'url': 'http://www.zhihu.com/people/jayson-24', 'title': u'知乎'},
+    {'url': 'http://www.zhihu.com/people/jayson-hwang', 'title': u'知乎'},
     {'url': 'https://github.com/JaySon-Huang', 'title': u'GitHub'},
     {'url': 'http://www.wooyun.org/whitehats/JaySon', 'title': u'乌云'},
 )
