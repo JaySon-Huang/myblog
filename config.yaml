@@ -1,0 +1,6 @@
+name: jsite
+version: 3
+
+handlers:
+- url: /static/
+  static_path: static_collect
