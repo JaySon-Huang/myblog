@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'meta.html' %}
+
+    <link rel="alternate" hreflang="zh" href="http://jaysonhwang.sinaapp.com/" />
+{# load CSS and JavaScript #}
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">{# Bootstrap 核心 CSS 文件 #}
+{# <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> #}{# 可选的Bootstrap主题文件（一般不用引入） #}
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>{# jQuery文件。务必在bootstrap.min.js 之前引入 #}
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>{# 最新的 Bootstrap 核心 JavaScript 文件 #}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+  <script type="text/javascript" src="{% static 'functions.js' %}"></script>
+  <script src="http://s.cdpn.io/277/matrix.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'grass.css' %}">
+  <script type="text/javascript" src="{% static 'grass.js' %}"></script>
+{% block static_files %}{% endblock %}
+  </head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">{# 导航条 #}
+    <div class="container">
+      {# no Brand and toggle get grouped for better mobile display #}
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          {% for profile in profile_list %}{% spaceless %}
+            {% if forloop.first %}<li class="active">{% else %}<li>{% endif %}
+            {% if profile.drop_downs %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expaded="false">{{ profile.title }}<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                {% for action in profile.drop_downs %}
+                  <li><a href="{{ action.url }}">{{ action.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% else %}
+            <a href="{{ profile.url }}" title="{{ profile.title }}">{{ profile.title }}</a></li>
+            {% endif %}
+          {% endspaceless %}{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>{# end导航条 #}
+  <div class="container">
+	<div class="container-fluid" id="info">
+    <!--<img src="http://jaysonhwang-static.stor.sinaapp.com/images/profile_icon.jpg" alt="">--><img src="{% static 'profile_icon.jpg' %}" alt="JaySon."><br />JaySon.
+  </div> <!--info end-->
+  <div id="mainbody" class='row-fluid'>
+  {% block mainbody %}{% endblock %}
+  </div><!--container end-->
+<footer>{# 底部栏 #}
+  <div class="container">
+    <a href="/sitemap.xml" title='站点地图'>站点地图</a>
+    <br />
+    <a href="/tic_logo/">TIC logo设计查看</a>
+    <br />
+    <p>Copyright &copy; 2014 by JaySon Huang.All rights reserved.</p>
+  </div>
+</footer>{# end底部栏 #}
+
+<!-- jQuery返回顶部 -->
+<div id="gotopbox">
+  <a id="gotop" href="javascript:void(0)">返回顶部</a>
+  <span class="glyphicon glyphicon-arrow-up"></span>
+</div>
+</body>
+</html>

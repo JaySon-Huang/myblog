@@ -1,0 +1,42 @@
+{% extends "blog/blog_base.html" %}
+{% load staticfiles %}
+{% load humanize %}
+{% load disqus_tags %}
+
+{% block blog_static_files %}
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/post_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <div class="panel-heading">
+    {% if post.post_type == 1 %}
+      <span class="post-type post-type-re">[转]</span>
+    {% elif post.post_type == 2 %}
+      <span class="post-type post-type-trans">[译]</span>
+    {% endif %}
+    <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
+  </div>
+  <div class="panel-body">
+    <ul class="post-details">
+      <li class="time"><span class="glyphicon glyphicon-time"></span>post&nbsp;@&nbsp;{{ post.pub_date|naturaltime }}</li>
+      <br />
+      <li class="cata"><span class="glyphicon glyphicon-folder-open"></span>Catalogue: <a href="{% url 'blog:cata' post.catalogue|urlencode %}">{{ post.catalogue }}</a></li>
+      <li class="tags"><span class="glyphicon glyphicon-tags"></span>Tags:
+        {% for tag in post.tags.all %}
+        <a href="{% url 'blog:tag' tag|urlencode %}">{{ tag.name }}</a>{% if not forloop.last %},{% endif %}
+        {% endfor %}
+      </li>
+      <li>{% disqus_num_replies %}</li>
+      <li class="pv">View{{ post.page_view|pluralize }}:{{ post.page_view }}</li>
+    </ul>
+    <div class="post-body">
+      {{ post.body|safe }}
+    </div>
+    <div class="comment">
+      {% disqus_show_comments %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
