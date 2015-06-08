@@ -23,7 +23,15 @@
 <body>
   <nav class="navbar navbar-inverse navbar-static-top">{# 导航条 #}
     <div class="container">
-      {# no Brand and toggle get grouped for better mobile display #}
+      {# 适配手机显示的导航条 #}
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">JaySon的小黑屋</a>
+      </div>
+      {# 导航条内容 #}
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           {% for profile in profile_list %}{% spaceless %}
