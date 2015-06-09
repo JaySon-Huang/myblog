@@ -3,6 +3,8 @@
 {% load humanize %}
 {% load disqus_tags %}
 
+{% block title %}{{ post.title }} -- JaySon{% endblock %}
+
 {% block blog_static_files %}
   <link rel="stylesheet" type="text/css" href="{% static 'blog/post_detail.css' %}">
 {% endblock %}
