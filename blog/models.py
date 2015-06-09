@@ -17,6 +17,9 @@ class Catalogue(models.Model):
     def __str__(self):
         return self.title
 
+    def __unicode__(self):
+        return self.title
+
 
 class Post(models.Model):
     '''
@@ -55,6 +58,9 @@ class Post(models.Model):
     tags = TaggableManager()
 
     def __str__(self):
+        return self.title
+
+    def __unicode__(self):
         return self.title
 
     class Meta:
