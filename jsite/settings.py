@@ -32,9 +32,13 @@ ALLOWED_HOSTS = [
     '127.0.0.1', 'localhost',
     'jaysonhwang.sinaapp.com', 'www.jaysonhwang.com', 'jaysonhwang.com',
 ]
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+X_FRAME_OPTIONS = 'DENY'
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
